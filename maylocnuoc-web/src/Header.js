@@ -1,5 +1,7 @@
 import React, { Component } from "react";
- 
+import { Link } from "react-router-dom";
+
+
 class Header extends Component {
   componentDidMount() {
   }
@@ -61,7 +63,7 @@ class Header extends Component {
                             <ul className="nav navbar-nav">
                             <li><a className="tag_m active_tab" href="index.html">Home</a></li>
                             <li><a className="tag_m" href="about.html">About</a></li>
-                            <li><a className="tag_m" href="shop.html">Product</a></li>
+                            <li><Link to="/shop" className="tag_m" href="shop.html">Product</Link></li>
                             <li><a className="tag_m" href="shop_detail.html">Detail</a></li>
                             <li className="dropdown">
                                 <a className="tag_m" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span className="caret"></span></a>
