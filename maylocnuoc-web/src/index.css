@@ -1,13 +1,436 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+Template Name:Med Shop
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************center_home****************/
+.fade-carousel {
+  position: relative;
+  min-height: 600px;
+}
+.fade-carousel .carousel-inner .item {
+  min-height: 530px;
+}
+.fade-carousel .carousel-indicators > li {
+  margin: 0 4px;
+  opacity: .8;
+}
+.fade-carousel .carousel-indicators > li.active {
+opacity: 1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hero h1{
+font-size:60px;
+}
+.hero h1 span{
+font-size:60px;
+color:#2a96ff;
+}
+.hero h4{
+display:inline-block;
+margin-left:5px;
+margin-right:5px;
+}
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+  position: absolute;
+width:100%;
+  top: 50%;
+  left:50%;
+padding:20px 15px;
+  z-index: 2;
+  text-transform:capitalize;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+-webkit-transform: translate3d(-50%,-50%,0);
+-moz-transform: translate3d(-50%,-50%,0);
+-ms-transform: translate3d(-50%,-50%,0);
+-o-transform: translate3d(-50%,-50%,0);
+transform: translate3d(-50%,-50%,0);
+}
+
+
+.fade-carousel .carousel-inner .item .hero {
+  opacity: 0;
+  -webkit-transition: 2s all ease-in-out .1s;
+     -moz-transition: 2s all ease-in-out .1s; 
+      -ms-transition: 2s all ease-in-out .1s; 
+       -o-transition: 2s all ease-in-out .1s; 
+          transition: 2s all ease-in-out .1s; 
+}
+.fade-carousel .carousel-inner .item.active .hero {
+  opacity: 1;
+  -webkit-transition: 2s all ease-in-out .1s;
+     -moz-transition: 2s all ease-in-out .1s; 
+      -ms-transition: 2s all ease-in-out .1s; 
+       -o-transition: 2s all ease-in-out .1s; 
+          transition: 2s all ease-in-out .1s;    
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 1;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+min-height: 600px;
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+   background-color:#2a96ff26;
+}
+.fade-carousel .slides .slide-2 {
+background-color:#2a96ff26;
+}
+.fade-carousel .slides .slide-3 {
+  background-color: #2a96ff26;
+}
+#center .carousel-indicators{
+bottom:0;
+}
+.fade-carousel .carousel-indicators > li{
+    background: #000;
+  border-color: #000;
+  width:11px;
+  height:11px;
+}
+.fade-carousel .carousel-indicators > li.active{
+    width:11px;
+  height:11px;
+  background:#2a96ff;
+  border-color:#2a96ff;
+}
+/*********************center_home_end****************/
+
+/*********************collection****************/
+#collection{
+padding-top:50px;
+padding-bottom:50px; 
+}
+.collect_1ll h5{
+display:inline-block;
+margin-left:2px;
+margin-right:2px;
+}
+.collect_1l{
+background:#2a96ff14;
+padding:30px 10px;
+}
+.collect_1lo{
+background:#2a96ff26;
+}
+
+.collect_1ll h4 span{
+font-size:18px!important;
+}
+.bg_1{
+background:#cae7d9;
+color:#000;
+display:inline-block;
+padding:10px;
+border-radius:20px 5px; 
+}
+.bg_2{
+background:#f1e6b9;
+color:#000;
+display:inline-block;
+padding:10px;
+border-radius:20px 5px; 
+}
+.bg_3{
+background:#b6d2f1;
+color:#000;
+display:inline-block;
+padding:10px;
+border-radius:20px 5px; 
+}
+#collection_o{
+padding-top:50px;
+padding-bottom:50px;
+background:#2a96ff26; 
+}
+/*********************collection_end****************/
+
+/*********************categories****************/
+#categories{
+background: #2a96ff14;
+padding-top:50px;
+padding-bottom:50px;
+}
+.categories_1 h2{
+border-bottom:1px solid #ddd;
+padding-bottom:10px; 
+}
+.categories_2i {
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+/*********************categories_end****************/
+
+/*********************sell****************/
+#sell{
+padding-top:50px;
+padding-bottom:50px;
+}
+.arriv_2m2 h5{
+background:#2a96ff;
+padding-top:5px;
+padding-bottom:5px;
+width:30%;
+color:#fff;
+}
+.arriv_2m{
+position:relative;
+}
+.arriv_2m2{
+position:absolute;
+top:0;
+width:100%;
+left:0;
+}
+.arriv_2m3 .span_1 {
+color:#d01f1f;
+display:block;
+margin-top:10px; 
+}
+.arriv_2m3 .span_2 {
+color:#ccc;
+margin-right:10px;
+text-decoration:line-through; 
+}
+.arriv_2m3{
+background: #2a96ff14;
+padding:25px 15px 30px 15px;
+}
+.arriv_2{
+margin-top:30px; 
+}
+.arriv_2m2n h5{
+background:#d01f1f;
+padding-top:5px;
+padding-bottom:5px;
+width:30%;
+color:#fff;
+}
+.arriv_2m2n{
+position:absolute;
+top:0;
+width:100%;
+left:70%;
+}
+
+.sell_1 .btn-success{
+background:#2a96ff;
+border-radius:50%; 
+padding:0;
+border:none;
+width:35px;
+height:35px;
+line-height:35px;
+border:1px solid #2a96ff;
+margin-left:3px;
+margin-right:3px;
+text-align:center;
+}
+.sell_1 .btn-success:hover{
+background:none;
+border-color:#ddd;
+color:#000;
+}
+.sell_1{
+border-bottom:1px solid #ddd;
+padding-bottom:10px;
+margin-bottom:20px; 
+}
+/*********************sell_end****************/
+
+/*********************arrive****************/
+#arrive{
+overflow:hidden;
+padding-top:50px;
+padding-bottom:50px;
+}
+.arrive_1{
+margin-top:20px; 
+}
+/*********************arrive_end****************/
+
+/*********************offer****************/
+#offer {
+  background-image: url(https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/css/img/27.jpg);
+background-position:center;
+}
+.offer_m{
+background:#ffffffc9;
+padding-top:100px;
+padding-bottom:100px;
+}
+.offer_l h1{
+font-size:60px; 
+}
+.offer_l ul li{
+display:inline-block;
+background:#fff;
+text-align:center;
+width:100px;
+height:100px;
+line-height:1em;
+font-size:32px;
+margin-left:5px;
+margin-right:5px;
+border-radius:5px;
+padding-top:20px;
+}
+.offer_l ul li span{
+font-size:18px;
+}
+/*********************offer_end****************/
+
+/*********************blog_home****************/
+#blog_home{
+padding-top:50px;
+padding-bottom:50px; 
+}
+.blog_home_1 {
+  margin-top: 20px;
+}
+/*********************blog_home_end****************/
+/*********************connect****************/
+#connect{
+background: #2a96ff14;
+padding-top:60px;
+padding-bottom:60px;
+}
+.connect_1m{
+display:flex;
+}
+.connect_1l span{
+font-size:40px;
+color: #2a96ff; 
+margin-right:15px;
+}
+.connect_1r h4{
+margin-top:10px;
+font-size:20px;
+}
+.connect_1r p{
+margin-top:5px; 
+font-size:16px;
+letter-spacing:0;
+}
+/*********************connect_end****************/
+
+@media screen and (max-width : 767px){
+.hero h1{
+font-size:32px; 
+}
+.hero h1 span{
+font-size:32px; 
+}
+.hero p{
+font-size:16px; 
+}
+.hero .button{
+font-size:18px;
+margin-top:0; 
+}
+.hero h4{
+margin-bottom:5px;
+display:block;
+}
+.center_home{
+text-align:center;
+}
+.center_home img{
+display:none;
+}
+#collection{
+text-align:center;
+}
+.collect_1l {
+margin-top:10px; 
+}
+.collect_1lr {
+margin-top:10px; 
+}
+#categories{
+text-align:center; 
+}
+#sell{
+text-align:center; 
+}
+.hidden-xs{
+display:block!important;
+}
+#sell .pull-right{
+float:none!important;
+margin-top:10px;
+}
+.arriv_2m {
+margin-top:10px; 
+}
+#collection_o{
+text-align:center;
+}
+.collect_1ll {
+margin-top:10px; 
+}
+#arrive{
+text-align:center;
+}
+.offer_l ul li{
+margin-top:10px; 
+}
+#blog_home{
+text-align:center;
+}
+.blog_home_1i {
+margin-top:10px; 
+}
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.hero h1{
+font-size:40px; 
+}
+.hero h1 span{
+font-size:40px; 
+}
+.collect_1ll h4{
+font-size:20px; 
+}
+.collect_1ll  .button{
+font-size:16px; 
+padding:10px!important;
+}
+.offer_l ul li{
+margin-bottom:5px; 
+}
+}
+@media (min-width:992px) and (max-width:1200px) {
+
+}
+@media (min-width:1201px) and (max-width:1350px) {
+
 }

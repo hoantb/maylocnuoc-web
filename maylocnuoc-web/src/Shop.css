@@ -1,0 +1,230 @@
+/*
+Template Name:Med Shop
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************shop****************/
+.center_shop{
+    background: #2a96ff14;
+    padding-top:80px;
+    padding-bottom:80px;
+    }
+   #shop{
+   padding-top:40px;
+   padding-bottom:20px; 
+    }
+   .shop_1l h4{
+   border-bottom:1px solid #ddd;
+   padding-bottom:10px; 
+    }
+   .shop_1l ul li{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    border:1px solid;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:10px;
+    }
+   .bg_1{
+   background:#000; 
+    }
+   .bg_2{
+   background:#FF0000;
+    }
+   .bg_3{
+   background:#FFFF00;
+    }
+   .bg_4{
+   background:#fff;
+    }
+   .bg_5{
+   background:#0000FF;
+    }
+   .bg_6{
+   background:#006600;
+    }
+   .bg_7{
+   background:#00CC00;
+    }
+   .bg_8{
+   background:#9999CC;
+    }
+   .bg_9{
+   background:#FF33CC;
+    }
+   .bg_10{
+   background:#9933FF;
+    }
+   .bg_11{
+   background:#00FF00;
+    }
+   .bg_12{
+   background:#FF66CC;
+    }
+   .bg_13{
+   background:#009999;
+    }
+   .shop_1l h5 span{
+   margin-left:5px; 
+    }
+   .shop_1l{
+   margin-top:20px; 
+    }
+   .shop_1l1{
+    background: #2a96ff14;
+    margin-top:30px;
+    padding:40px 20px;
+    }
+   .shop_1l1 img{
+    margin-top:15px;
+    }
+   .shop_1l2 h4{
+   border-bottom:1px solid #ddd;
+   padding-bottom:10px; 
+    }
+   .shop_1l2{
+   margin-top:30px; 
+    }
+   .shop_1l2i img{
+    width:80px;
+    height:80px;
+    float:left;
+    margin-right:10px;
+    }
+   .shop_1l2i h6{
+    margin-top:10px;
+    }
+   .shop_1l2i span{
+    margin-top:10px;
+    display:block;
+    color: #ffba0a;
+    }
+   .shop_1l2i{
+   margin-top:20px; 
+    }
+   .shop_1rr p{
+   display:inline-block;
+   margin-right:10px; 
+    }
+   .shop_1rr .form-control{
+   display:inline-block;
+   width:70%;
+   font-size:18px;
+   height:50px; 
+    }
+   .shop_1rl p{
+    padding-top:12px;
+    }
+    
+   .arriv_2m2 h5{
+    background:#2a96ff;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:30%;
+    color:#fff;
+    }
+   .arriv_2m{
+    position:relative;
+    }
+   .arriv_2m2{
+   position:absolute;
+   top:0;
+   width:100%;
+   left:0;
+    }
+   .arriv_2m3 .span_1 {
+   color:#d01f1f;
+   display:block;
+   margin-top:10px; 
+    }
+   .arriv_2m3 .span_2 {
+   color:#ccc;
+   margin-right:10px;
+   text-decoration:line-through; 
+    }
+   .arriv_2m3{
+    background: #2a96ff14;
+    padding:25px 15px 30px 15px;
+    }
+   .arriv_2{
+   margin-top:30px; 
+    }
+   .arriv_2m2n h5{
+    background:#d01f1f;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:30%;
+    color:#fff;
+    }
+   .arriv_2m2n{
+   position:absolute;
+   top:0;
+   width:100%;
+   left:70%;
+    }
+   .shop_1r1{
+   overflow:hidden;
+   margin-top:30px; 
+    }
+   .center_product_1r4r ul li a{
+   color:#333; 
+    }
+   .center_product_1r4r ul li a:hover{
+   background: #2a96ff;
+   color:#fff;
+   border-color:#2a96ff;
+    }
+   .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
+   background: #2a96ff;
+   color:#fff;
+   border-color:#2a96ff;
+    }
+   .center_product_1r4r{
+   margin-top:30px; 
+    }
+   /*********************shop_end****************/
+   @media screen and (max-width : 767px){
+   #shop{
+    text-align:center;
+    }
+   .shop_1l2i img{
+   float:none;
+   margin-bottom:10px;
+    }
+   .shop_1rr{
+    text-align:center;
+    margin-top:10px; 
+    }
+   .arriv_2m{
+   margin-top:10px; 
+    }
+   .arriv_2m3 h3{
+   font-size:28px; 
+    }
+   }
+   
+   @media (min-width:768px) and (max-width:991px) {
+   .shop_1l1 h4{
+   font-size:18px; 
+    }
+   .shop_1l2i img{
+   display:block;
+   margin-bottom:10px;
+   width:100%;
+    }
+   .shop_1rr .form-control{
+    width:60%;
+    }
+    }
+   @media (min-width:992px) and (max-width:1200px) {
+   .shop_1l2i img{
+   width:60px;
+   height:60px;
+    }
+    }
+   @media (min-width:1201px) and (max-width:1350px) {
+   
+    }   

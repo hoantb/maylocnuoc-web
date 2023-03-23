@@ -9,7 +9,6 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route name="shop" path="shop" element={<Shop />} />
             </Routes>
         </BrowserRouter>
     );

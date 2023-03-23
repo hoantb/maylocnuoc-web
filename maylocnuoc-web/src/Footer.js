@@ -19,7 +19,7 @@ class Footer extends Component {
                     <h5><span className="bold">Address:</span> <a href="#">2190 Clue, The Xronz, OZ 0038, USA</a></h5>
                     <ul className="social-network social-circle">
                                         <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>
-                                        <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook" ></i></a></li>
                                         <li><a href="#" className="icoTwitter" title="Twitter"><i className="fa fa-twitter"></i></a></li>
                                         <li><a href="#" className="icoGoogle" title="Google +"><i className="fa fa-google-plus"></i></a></li>
                                         <li><a href="#" className="icoLinkedin" title="Linkedin"><i className="fa fa-linkedin"></i></a></li>
