@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   componentDidMount() {
@@ -22,9 +22,9 @@ class Header extends Component {
                     <div className="col-sm-5">
                         <div className="top_1r clearfix top_1i">
                             <ul className="navbar-right mgt social-network social-circle">
-                                <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>
-                                <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook"></i></a></li>
-                                <li><a href="#" className="icoTwitter" title="Twitter"><i className="fa fa-twitter"></i></a></li>
+                                <li><a href="#" className="icoRss" title="Theo dõi trên Youtube"><i className="fa fa-rss"></i></a></li>
+                                <li><a href="#" className="icoFacebook" title="Theo dõi trên Facebook"><i className="fa fa-facebook"></i></a></li>
+                                <li><a href="#" className="icoTwitter" title="Theo dõi trên Twitter"><i className="fa fa-twitter"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,27 +42,19 @@ class Header extends Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <a className="navbar-brand" href="index.html"><i className="fa fa-heartbeat"></i> Med <span>Shop</span> </a>
+                            <Link className="navbar-brand" to="/"><i className="fa fa-heartbeat"></i> Med <span>Shop</span> </Link>
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav">
-                            <li><a className="tag_m active_tab" href="index.html">Home</a></li>
-                            <li><a className="tag_m" href="about.html">About</a></li>
-                            <li><a to="/shop" className="tag_m" href="shop.html">Product</a></li>
-                            <li><a className="tag_m" href="shop_detail.html">Detail</a></li>
-                            <li className="dropdown">
-                                <a className="tag_m" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span className="caret"></span></a>
-                                <ul className="dropdown-menu drop_1" role="menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a className="border_none" href="blog_details.html">Blog Detail</a></li>
-                                </ul>
-                                </li>
-                            <li><a className="tag_m" href="contact.html">Contact</a></li>
-                            
-                            
+                            <li><Link className="tag_m active_tab" to="/">Trang Chủ</Link></li>
+                            <li><Link className="tag_m" to="/gioi-thieu">Giới Thiệu</Link></li>
+                            <li><Link to="/san-pham" className="tag_m" >Sản Phẩm</Link></li>
+                            <li><Link className="tag_m" to="/dich-vu">Dịch Vụ</Link></li>
+                            <li><Link className="tag_m" to="/tin-tuc">Tin Tức</Link></li>
+                            <li><Link className="tag_m" to="/lien-he">Liên Hệ</Link></li>
                         </ul>
                             <ul className="nav navbar-nav navbar-right">
-                                <li className="dropdown" style={{"paddingTop": "7px", "width": "270px"}}> <input  type="text" className="form-control" placeholder="Search" /></li>
+                                <li className="dropdown" style={{"paddingTop": "7px", "width": "150px"}}> <input  type="text" className="form-control" placeholder="Tìm Kiếm..." /></li>
                                 <li className="dropdown"><a className="tag_m1" href="#" data-toggle="dropdown"><span className="fa fa-search"></span></a>
                                     {/* <ul className="dropdown-menu drop_2" style={{"minWidth": "300px"}}>
                                         <li>

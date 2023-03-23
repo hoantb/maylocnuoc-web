@@ -94,12 +94,12 @@ class Shop extends Component {
                     <div class="shop_1r clearfix">
                     <div class="col-sm-6 space_left">
                         <div class="shop_1rl clearfix">
-                        <p class="mgt">We found 9 products available for you</p>
+                        <p class="mgt">Tìm Thấy 9 Sản Phẩm</p>
                         </div>
                     </div>
                     <div class="col-sm-6 space_left">
                         <div class="shop_1rr text-right clearfix">
-                        <p class="mgt">Sort By:</p>
+                        <p class="mgt">Sắp Xếp:</p>
                         <select class="form-control">
                             <option>Default</option>
                             <option>Popularity</option>
@@ -379,53 +379,6 @@ class Shop extends Component {
                             <li><a href="shop_detail.html">5</a></li>
                             <li><a href="shop_detail.html">»</a></li>
                             </ul>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                </div>
-                </section>
-
-                <section id="connect" class="clearfix">
-                <div class="container">
-                <div class="row">
-                <div class="col-sm-12 space_all">
-                    <div class="connect_1 clearfix">
-                    <div class="col-sm-3 connect_1m">
-                    <div class="connect_1l clearfix">
-                        <span><i class="fa fa-truck"></i></span>
-                    </div>
-                    <div class="connect_1r clearfix">
-                    <h4>Free Shipping</h4>
-                    <p>Free shipping world wide</p>
-                    </div>
-                    </div>
-                    <div class="col-sm-3 connect_1m">
-                    <div class="connect_1l clearfix">
-                        <span><i class="fa fa-headphones"></i></span>
-                    </div>
-                    <div class="connect_1r clearfix">
-                    <h4>Support 24/7</h4>
-                    <p>Contact us 24 hours a day</p>
-                    </div>
-                    </div>
-                    <div class="col-sm-3 connect_1m">
-                    <div class="connect_1l clearfix">
-                        <span><i class="fa fa-credit-card"></i></span>
-                    </div>
-                    <div class="connect_1r clearfix">
-                    <h4>Secure Payments</h4>
-                    <p>100% payment protection</p>
-                    </div>
-                    </div>
-                    <div class="col-sm-3 connect_1m border_none">
-                    <div class="connect_1l clearfix">
-                        <span><i class="fa fa-shopping-cart"></i></span>
-                    </div>
-                    <div class="connect_1r clearfix">
-                    <h4>Easy Return</h4>
-                    <p>Simple returns policy</p>
-                    </div>
                     </div>
                     </div>
                 </div>

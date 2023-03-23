@@ -1,0 +1,75 @@
+/*
+Template Name:Med Shop
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************contact****************/
+.center_shop{
+    background: #2a96ff14;
+    padding-top:80px;
+    padding-bottom:80px;
+    }
+   .contact_1i span i{
+    font-size:50px;
+    }
+   .contact_1i {
+       padding: 20px;
+       box-shadow: 0 0 10px rgba(0,0,0,0.6);
+   }
+   .contact_1i p{
+   margin-top:5px;
+   }
+   #contact{
+    padding-top:40px;
+    padding-bottom:40px;
+    }
+   .contact_2l1 .form-control{
+   margin-top:15px;
+   background:#2a96ff14;
+   border:none;
+   box-shadow:none;
+   height:50px; 
+    }
+   .contact_2l1 .form_1{
+    height:150px;
+    }
+   .contact_2{
+   margin-top:40px; 
+    }
+   .contact_3{
+   margin-top:40px; 
+    }
+   /*********************contact_end****************/
+   @media screen and (max-width : 767px){
+   .contact_1i {
+   margin-top:10px; 
+    }
+   .contact_2 {
+    text-align:center;
+    }
+   .contact_2l {
+   margin-top:10px; 
+    }
+   }
+   
+   @media (min-width:768px) and (max-width:991px) {
+   .contact_1i p{
+   font-size:16px; 
+    }
+   .contact_1i{
+   padding:10px; 
+    }
+    }
+   @media (min-width:992px) and (max-width:1200px) {
+   
+    }
+   @media (min-width:1201px) and (max-width:1350px) {
+   
+    }
+   
+   
+   
+   
+   
