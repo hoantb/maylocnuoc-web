@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import CenterShop from "./CenterShop";
 import './Shop.css'
 import * as ConstantsVar from "./common/constants";
+import { Link } from "react-router-dom";
 
 class Shop extends Component {
     constructor(props) {
@@ -153,7 +154,7 @@ class Shop extends Component {
                                                         <div key={"product_" + product.id} className="col-sm-4 space_left">
                                                             <div className="arriv_2m clearfix">
                                                             <div className="arriv_2m1 clearfix">
-                                                                <a href="shop_detail.html"><img src={product.hinh_anh} alt="abc" className="iw"/></a>
+                                                                <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>
                                                             </div>
                                                             <div className="arriv_2m3 clearfix">
                                                             <h4 className="bold mgt">{product.ten}</h4>

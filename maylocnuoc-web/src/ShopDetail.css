@@ -1,0 +1,268 @@
+/*
+Template Name:Med Shop
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************shop_detail****************/
+.center_shop{
+    background: #2a96ff14;
+    padding-top:80px;
+    padding-bottom:80px;
+    }
+   #shop_detail{
+   padding-top:40px;
+   padding-bottom:40px; 
+    }
+   
+   .center_shop_1ri h6 span i {
+   color:#FFCC66;
+    }
+   .center_shop_1ri h6 span{
+   margin-right:10px; 
+    }
+   .center_shop_1ri h5 span{
+   margin-left:30px; 
+    }
+   .center_shop_1ri1{
+   margin-top:10px; 
+    }
+   .center_shop_1ri1 h5{
+   width:50%;
+    }
+   .center_shop_1ri1 h4 span{
+   color:#ddd;
+   margin-right:10px;
+   text-decoration:line-through; 
+    }
+   .center_shop_1ri1 .input-group{
+    margin-top:10px;
+    width:18%;
+    }
+   .center_shop_1ri1 h6 span{
+   margin-left:10px;
+    }
+   .center_shop_1ri1 ul li a{
+   background:#333;
+    }
+   .center_shop_1ri1 ul li a i{
+   color:#fff;
+    }
+   .center_shop_1ri1 ul{
+   display:block;
+   margin-top:20px; 
+    }
+   .center_shop_2{
+   margin-top:20px; 
+    }
+   .pd_n ul li{
+    width:35px;
+    height:35px;
+    border:1px solid #000;
+    display:inline-block;
+    margin-right:10px;
+    cursor:pointer;
+    text-align:center;
+    line-height:35px;
+    font-size:12px;
+    }
+   .pd_n .bg_1{
+    background:red;
+    }
+   .pd_n .bg_2{
+    background:orange;
+    }
+   .pd_n .bg_3{
+    background:none;
+    }
+   .pd_n .bg_4{
+    background:pink;
+    }
+   .pd_n .bg_5{
+    background:#000;
+    }
+   .pd_n .act{
+   border:3px solid #000;
+    }
+   .pd_n .act_1{
+   border:1px solid #f6740a;
+    }
+   .pd_n .line{
+   text-decoration:line-through;
+    }
+   .pd_n1 h4{
+   display:inline-block;
+   margin-right:10px; 
+   font-weight:normal;
+    }
+    
+   .product_detail_1{
+    margin-top:40px;
+     }
+   
+   .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+      background:#2a96ff!important;
+      border-color:#2a96ff!important;
+      color:#fff!important; 
+     }
+   .product_detail_1 .nav-tabs{
+    border:none;
+      }
+   .product_detail_1 .nav-tabs li{
+     margin-left:5px;
+     margin-right:5px;
+     }
+   .product_detail_1 .nav-tabs li a{
+    background: #2a96ff14;
+    color:#000;
+    border-radius:20px; 
+    font-size:18px;
+    border:none!important;
+     }
+   .product_detail_1 .nav-tabs li a i{
+     margin-right:5px; 
+      }
+   .home_i ul{
+    margin-top:20px;
+    list-style:disc;
+    margin-left:15px; 
+     }  
+   .home_i ul li{
+    margin-top:10px; 
+     }
+   .menu1ii img{
+   float:left;
+   width:80px;
+   height:80px;
+   margin-right:15px;  
+     } 
+   .menu_i table {
+     margin-top:10px;
+   }
+   .date{
+    font-size:12px;
+    color:#999; 
+     }
+   .menu1ii{
+    background:#f4f4f4;
+    margin-bottom:20px;
+    padding-top:10px;
+    padding-bottom:20px; 
+     }
+   .menu1ii .thumbnail{
+    margin-bottom:0; 
+     }
+   .menu1i1 .form-control {
+       border-radius: 0;
+       height: 40px;
+       margin-top:10px;
+   }
+   .form_1 {
+       height: 100px!important;
+   }
+   .menu1i1{
+   border:1px solid #ddd;
+   margin-top:20px;
+   padding:20px 15px 30px 15px;  
+     }
+   .menu1i1 h4{
+    margin-bottom:20px; 
+     }
+   .tab-content {
+       padding-top: 20px;
+   }
+   table {
+     width: 100%;
+     margin-top:20px;
+   }
+   td {
+     border: 1px solid #ddd;
+     text-align: left;
+     padding: 10px;
+     font-size:18px;
+   }
+   td span i{
+    color: #ffd925; 
+     }
+   .shop_detail_3{
+   margin-top:30px; 
+    }
+   /*********************shop_detail_end****************/
+   @media screen and (max-width : 767px){
+   #shop_detail{
+    text-align:center;
+    }
+   .center_shop_1ri {
+   margin-top:15px; 
+    }
+   .center_shop_1ri1 h5{
+   width:100%;
+   font-size:16px;
+    }
+   .center_shop_1ri1 .input-group{
+    margin-left:auto;
+    margin-right:auto;
+    width:42%;
+    }
+   .product_detail_1 .nav-tabs li{
+   margin-top:5px; 
+    }
+   .home_i ul{
+   margin-left:0;
+   list-style:none; 
+    }
+   .menu1i {
+   text-align:left; 
+    }
+   .center_shop_1ri1 h5 span {
+       float: none!important;
+       margin-left: 15px;
+   }
+   .center_shop_1ri1 .button_1{
+   padding:10px;
+   font-size:16px; 
+    }
+   .center_shop_1ri1 .button{
+   padding:10px;
+   font-size:16px; 
+    }
+   .pd_n1 h4 {
+   margin-right:0;
+   }
+   .menu1i1 {
+       text-align:center;
+       padding: 20px 15px 30px 15px;
+   }
+   .menu1i1 img{
+   margin-top:10px;
+   }
+   .arriv_2m {
+   margin-top:10px; 
+    }
+   }
+   
+   @media (min-width:768px) and (max-width:991px) {
+   .center_shop_1ri1 h5{
+   width:80%; 
+    }
+   .center_shop_1ri1 .input-group{
+   width:30%; 
+    }
+    }
+   @media (min-width:992px) and (max-width:1200px) {
+   .center_shop_1ri1 h5{
+   width:60%; 
+    }
+   .center_shop_1ri1 .input-group{
+   width:22%; 
+    }
+    }
+   @media (min-width:1201px) and (max-width:1350px) {
+   
+    }
+   
+   
+   
+   
+   

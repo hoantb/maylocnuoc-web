@@ -7,6 +7,7 @@ import AboutUs from './AboutUs';
 import Contact from './Contact';
 import Service from './Service';
 import Blog from './Blog';
+import ShopDetail from './ShopDetail';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route exact path="/dich-vu" element={<Service />} />
                 <Route exact path="/tin-tuc" element={<Blog />} />
                 <Route exact path="/lien-he" element={<Contact />} />
+                <Route path="/chi-tiet-san-pham/:id" element={<ShopDetail />} />
             </Routes>
         </BrowserRouter>
     );
