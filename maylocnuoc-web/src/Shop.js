@@ -145,28 +145,31 @@ class Shop extends Component {
                         </div>
                         {
                             this.state.products_row && this.state.products_row.map(
-                                products_column => (
-                                    products_column.map(
-                                        product => (
-                                            <div key={"product_" + product.id} className="shop_1r1 clearfix">
-                                                <div className="col-sm-4 space_left">
-                                                    <div className="arriv_2m clearfix">
-                                                    <div className="arriv_2m1 clearfix">
-                                                        <a href="shop_detail.html"><img src={product.hinh_anh} alt="abc" className="iw"/></a>
-                                                    </div>
-                                                    <div className="arriv_2m3 clearfix">
-                                                    <h4 className="bold mgt">{product.ten}</h4>
-                                                    <p><a href="shop_detail.html">{product.mo_ta_ngan}</a></p>
-                                                    <h3 className="normal">
-                                                    <span className="span_2">{product.gia}</span>
-                                                    <span className="span_3 col_1"> {product.gia}</span> 
-                                                    </h3>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )
-                                    )
+                                (products_column, index) => (
+                                    <div key={"product_row_" + index} className="shop_1r1 clearfix">
+                                        {
+                                            products_column.map(
+                                                product => (
+                                                        <div key={"product_" + product.id} className="col-sm-4 space_left">
+                                                            <div className="arriv_2m clearfix">
+                                                            <div className="arriv_2m1 clearfix">
+                                                                <a href="shop_detail.html"><img src={product.hinh_anh} alt="abc" className="iw"/></a>
+                                                            </div>
+                                                            <div className="arriv_2m3 clearfix">
+                                                            <h4 className="bold mgt">{product.ten}</h4>
+                                                            <p><a href="shop_detail.html">{product.mo_ta_ngan}</a></p>
+                                                            <h3 className="normal">
+                                                            <span className="span_2">{product.gia}</span>
+                                                            <span className="span_3 col_1"> {product.gia}</span> 
+                                                            </h3>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                )
+                                            )
+                                        }
+                                    </div>
                                 )
                             )
                         }
