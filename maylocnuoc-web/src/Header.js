@@ -11,15 +11,15 @@ class Header extends Component {
                 <div className="container">
                 <div className="row">
                 <div className="top_1 clearfix">
-                    <div className="col-sm-7">
+                    <div className="col-sm-8">
                     <div className="top_1l clearfix">
                         <ul className="mgt">
-                        <li><a href="#"><i className="fa fa-phone col_1"></i> (+123) 456-7898</a></li>
-                            <li><a href="#"><i className="fa fa-map-marker col_1"></i> 1370 Clvd, The Bronx, OZ 2169, NZ</a></li>
+                        <li><Link to="/lien-he"><i className="fa fa-phone col_1"></i> 028 62924598</Link></li>
+                            <li><Link to="/lien-he"><i className="fa fa-map-marker col_1"></i> 638 Cộng Hòa, Phường 13, Quận Tân Bình, Tp. HCM</Link></li>
                         </ul>
                     </div>
                     </div>
-                    <div className="col-sm-5">
+                    <div className="col-sm-4">
                         <div className="top_1r clearfix top_1i">
                             <ul className="navbar-right mgt social-network social-circle">
                                 <li><a href="#" className="icoRss" title="Theo dõi trên Youtube"><i className="fa fa-rss"></i></a></li>

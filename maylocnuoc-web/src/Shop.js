@@ -78,12 +78,6 @@ class Shop extends Component {
                         <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Fashion</span></a></h5>
                         <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Grocery</span></a></h5>
                         </div>
-                        <div className="shop_1l1 text-center clearfix">
-                        <h5 className="mgt col_1">New Arrivals</h5>
-                        <h4>Modern Electronic Thermometer</h4>
-                        <h5><a className="button" href="shop_detail.html"><i className="fa fa-shopping-cart"></i> Shop Now</a></h5>
-                        <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/4.jpg" className="iw" alt="abc"/>
-                        </div>
                         <div className="shop_1l2 clearfix">
                         <h4 className="mgt">Best Seller</h4>
                         <div className="shop_1l2i clearfix">
@@ -158,7 +152,7 @@ class Shop extends Component {
                                                             </div>
                                                             <div className="arriv_2m3 clearfix">
                                                             <h4 className="bold mgt">{product.ten}</h4>
-                                                            <p><a href="shop_detail.html">{product.mo_ta_ngan}</a></p>
+                                                            <p><Link to={"/chi-tiet-san-pham/" + product.id}>{product.mo_ta_ngan}</Link></p>
                                                             <h3 className="normal">
                                                             <span className="span_2">{product.gia}</span>
                                                             <span className="span_3 col_1"> {product.gia}</span> 

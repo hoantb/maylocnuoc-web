@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import withRouter from "./common/withRouter";
 import "./ShopDetail.css"
 import * as ConstantsVar from "./common/constants";
+import { Link } from "react-router-dom";
 
 class ShopDetail extends Component {
     constructor(props) {
@@ -85,7 +86,7 @@ class ShopDetail extends Component {
                                 <h4 className="col_2"><span>{this.state.product.gia}</span> {this.state.product.gia}</h4>
                             }
                             <div className="pd_n1 clearfix">
-                                    <h4><a className="button" href="#">Đặt Mua Sản Phẩm</a></h4>
+                                    <h4><Link className="button" to="/lien-he">Đặt Mua Sản Phẩm</Link></h4>
                             </div>
                             <ul className="social-network social-circle">
                                             <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>

@@ -30,11 +30,11 @@ class AboutUs extends Component {
                     <div className="about_1 clearfix">
                     <div className="col-sm-6">
                     <div className="about_1l clearfix">
-                    <h5 className="col_1 mgt">We believe in less but better</h5>
-                    <h3>Welcome to MedQ! The purpose of your service is to create our MedQ. So we always want to be by your side....</h3>
-                    <p>Our company has been working honestly for 25 years. To make a positive impact in the markets where we operate, to empower partners and the community. we focusing on growth and adding value to customers.</p>
-                    <p>A message from our founders</p><br/>
-                    <blockquote><p className="mgt">We’ve been able to create a platform that customers can get their hands on whenever they want. It is always our intention to serve you.</p></blockquote>
+                    <h5 className="col_1 mgt">Chúng Tôi Tin Rằng Chất Lượng Tốt Hơn Số Lượng</h5>
+                    <h3>Chào Mừng Đến Với Lọc Nước Văn Lộc! Mục đích của chúng tôi là cung cấp sản phẩm sạch và an toàn cho bạn.....</h3>
+                    <p>VANLOC jsc,. là công ty chuyên doanh thiết bị xử lý nước công nghiệp và dân dụng, với nhiều năm kinh nghiệm hoạt động chuyên sâu trong ngành xử lý nước. Xác định nguồn nước sạch luôn quan trọng và cần thiết trong mọi hoạt động của cuộc sống và sản xuất. Sứ mệnh hoạt động của VANLOC là tạo ra giá trị tiêu dùng cho các khách hàng bằng sản phẩm chất lượng và dịch vụ sau bán hàng hài lòng.</p>
+                    <p>Slogan Của Công Ty Chúng Tôi</p><br/>
+                    <blockquote><p className="mgt">Công nghệ tạo sự khác biệt.</p></blockquote>
                     </div>
                     </div>
                     <div className="col-sm-6">
@@ -72,7 +72,7 @@ class AboutUs extends Component {
                     <div className="about_3 clearfix">
                     <div className="categories_1 clearfix">
                         <div className="col-sm-12">
-                        <h2 className="mgt">Why Choose Us</h2>
+                        <h2 className="mgt">Tại Sao Nên Chọn Chúng Tôi</h2>
                         </div>
                 </div>
                     <div className="about_3i clearfix clearfix">
@@ -108,7 +108,7 @@ class AboutUs extends Component {
                 <div className="row">
                 <div className="col-sm-12">
                     <div className="categories_1 clearfix">
-                        <h2 className="mgt">Meet Our Dedicated Doctors</h2>
+                        <h2 className="mgt">Đội Ngũ Kỹ Thuật Của Chúng Tôi</h2>
                 </div>
                 </div>
                 <div className="col-sm-12 space_all">

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
  
 class Footer extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class Footer extends Component {
                     </div>
                     <div className="connect_1r clearfix">
                     <h4>Free Shipping</h4>
-                    <p>Free shipping world wide</p>
+                    <p>Miễn Phí Vận Chuyển</p>
                     </div>
                     </div>
                     <div className="col-sm-3 connect_1m">
@@ -26,7 +27,7 @@ class Footer extends Component {
                     </div>
                     <div className="connect_1r clearfix">
                     <h4>Support 24/7</h4>
-                    <p>Contact us 24 hours a day</p>
+                    <p>Hỗ Trợ 24/7</p>
                     </div>
                     </div>
                     <div className="col-sm-3 connect_1m">
@@ -35,7 +36,7 @@ class Footer extends Component {
                     </div>
                     <div className="connect_1r clearfix">
                     <h4>Secure Payments</h4>
-                    <p>100% payment protection</p>
+                    <p>100% Thanh Toán An Toàn</p>
                     </div>
                     </div>
                     <div className="col-sm-3 connect_1m border_none">
@@ -44,7 +45,7 @@ class Footer extends Component {
                     </div>
                     <div className="connect_1r clearfix">
                     <h4>Easy Return</h4>
-                    <p>Simple returns policy</p>
+                    <p>Dễ Dàng Đổi Trả</p>
                     </div>
                     </div>
                     </div>
@@ -59,37 +60,37 @@ class Footer extends Component {
                     <div className="col-sm-3">
                     <div className="footer_1i clearfix">
                     <a className="navbar-brand" href="index.html"><i className="fa fa-heartbeat"></i> Med <span>Shop</span> </a>
-                    <h5><span className="bold">Phone:</span> <a href="#">(+123) 456-7898</a></h5>
-                    <h5><span className="bold">Email:</span> <a href="#">info@gmail.com</a></h5>
-                    <h5><span className="bold">Address:</span> <a href="#">2190 Clue, The Xronz, OZ 0038, USA</a></h5>
+                    <h5><span className="bold">Phone:</span> <Link to="/lien-he">028 62924598</Link></h5>
+                    <h5><span className="bold">Email:</span> <Link to="/lien-he">admin@locnuocvanloc.com</Link></h5>
+                    <h5><span className="bold">Address:</span> <Link to="/lien-he">638 Cộng Hòa, Phường 13, Quận Tân Bình, Tp. HCM</Link></h5>
                     <ul className="social-network social-circle">
-                                        <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>
-                                        <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook" ></i></a></li>
-                                        <li><a href="#" className="icoTwitter" title="Twitter"><i className="fa fa-twitter"></i></a></li>
-                                        <li><a href="#" className="icoGoogle" title="Google +"><i className="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#" className="icoLinkedin" title="Linkedin"><i className="fa fa-linkedin"></i></a></li>
-                                    </ul>
+                        <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>
+                        <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook" ></i></a></li>
+                        <li><a href="#" className="icoTwitter" title="Twitter"><i className="fa fa-twitter"></i></a></li>
+                        <li><a href="#" className="icoGoogle" title="Google +"><i className="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" className="icoLinkedin" title="Linkedin"><i className="fa fa-linkedin"></i></a></li>
+                    </ul>
                     </div>
                     </div>
                     <div className="col-sm-3">
                     <div className="footer_1i1 clearfix">
                     <h4 className="mgt">Thông Tin</h4>
                     <ul>
-                    <li><a href="#">Giới Thiệu</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
-                    <li><a href="#">Chính Sách</a></li>
-                    <li><a href="#">Điều Khoản & Điều Kiện</a></li>
+                    <li><Link to="/gioi-thieu">Giới Thiệu</Link></li>
+                    <li><Link to="/lien-he">Liên Hệ</Link></li>
+                    <li><Link to="/gioi-thieu">Chính Sách</Link></li>
+                    <li><Link to="/gioi-thieu">Điều Khoản</Link></li>
                     </ul>
                     </div>
                     </div>
                     <div className="col-sm-3">
                     <div className="footer_1i1 clearfix">
-                    <h4 className="mgt">Customer Care</h4>
+                    <h4 className="mgt">Hỗ Trợ Khách Hàng</h4>
                     <ul>
-                    <li><a href="#">Tư Vấn</a></li>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Order History</a></li>
-                    <li><a href="#">Wishlist</a></li>
+                    <li><Link href="#">Tư Vấn</Link></li>
+                    <li><Link to="/lien-he">Hướng Dẫn Thanh Toán</Link></li>
+                    <li><Link to="/gioi-thieu">Vận chuyển và Giao nhận</Link></li>
+                    <li><Link to="/gioi-thieu">Lịch Sử Đặt Hàng</Link></li>
                     </ul>
                     </div>
                     </div>
@@ -111,7 +112,7 @@ class Footer extends Component {
                 <div className="row">
                 <div className="footer_2 text-center clearfix">
                     <div className="col-sm-12">
-                    <p className="mgt">© 2023 Lọc Nước Văn Lộc | Design by <a className="col_1" href="http://www.templateonweb.com">admin@locnuocvanloc.com</a></p>
+                    <p className="mgt">© 2023 Lọc Nước Văn Lộc | Design by <Link className="col_1" to="/lien-he">admin@locnuocvanloc.com</Link></p>
                     </div>
                 </div>
                 </div>
