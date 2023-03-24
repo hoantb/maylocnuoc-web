@@ -84,7 +84,7 @@ class Shop extends Component {
                                 this.state.categories &&
                                 this.state.categories.map(
                                     category => (
-                                        <h5 key={"category_" + category.id}><Link ><input type="checkbox"/> <span>{category.ten}</span></Link></h5>
+                                        <h5 key={"category_" + category.id}><input type="checkbox"/> <span>{category.ten}</span></h5>
                                     )
                                 )
                             }
