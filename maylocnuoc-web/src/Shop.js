@@ -13,10 +13,12 @@ class Shop extends Component {
             products: [],
             products_row: [],
             product_each_row: 3,
+            categories: []
         }
     }
 
     componentDidMount() {
+        
         fetch( ConstantsVar.API_URL + "/api/san-pham" + "/")
         .then(res => res.json())
         .then(
@@ -39,7 +41,14 @@ class Shop extends Component {
                 console.log(products_row)
                 this.setState({products: result, products_row: products_row});
             }
-        ) 
+        )
+        fetch( ConstantsVar.API_URL + "/api/danh-muc" + "/")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({categories: result})
+            }
+        )
     }
     render() {
         return (
@@ -70,13 +79,15 @@ class Shop extends Component {
                         </ul>
                         </div>
                         <div className="shop_1l clearfix">
-                        <h4 className="mgt">Category</h4>
-                        <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Medical Equipment</span></a></h5>
-                        <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Jewelry</span></a></h5>
-                        <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Electronics</span></a></h5>
-                        <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Furniture</span></a></h5>
-                        <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Fashion</span></a></h5>
-                        <h5><a href="shop_detail.html"><input type="checkbox"/> <span>Grocery</span></a></h5>
+                        <h4 className="mgt">Danh Mục</h4>
+                            {
+                                this.state.categories &&
+                                this.state.categories.map(
+                                    category => (
+                                        <h5 key={"category_" + category.id}><Link ><input type="checkbox"/> <span>{category.ten}</span></Link></h5>
+                                    )
+                                )
+                            }
                         </div>
                         <div className="shop_1l2 clearfix">
                         <h4 className="mgt">Best Seller</h4>
