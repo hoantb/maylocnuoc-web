@@ -46,7 +46,7 @@ class Header extends Component {
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav">
-                            <li><Link className="tag_m active_tab" to="/">Trang Chủ</Link></li>
+                            <li><Link className="tag_m" to="/">Trang Chủ</Link></li>
                             <li><Link className="tag_m" to="/gioi-thieu">Giới Thiệu</Link></li>
                             <li><Link to="/san-pham" className="tag_m" >Sản Phẩm</Link></li>
                             <li><Link className="tag_m" to="/dich-vu">Dịch Vụ</Link></li>
