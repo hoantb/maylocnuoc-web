@@ -83,17 +83,18 @@ class Shop extends Component {
         )
     }
     clickPage(event) {
-        this.getPage(event.target.innerHTML, this.state.sort_type)
-        this.setState({current_page: event.target.innerHTML})
+        
+        this.getPage(Number(event.target.innerHTML), this.state.sort_type)
+        this.setState({current_page: Number(event.target.innerHTML)})
     }
 
     previousPage(event) {
         this.getPage(this.state.current_page - 1, this.state.sort_type)
-        this.setState({current_page: this.state.current_page - 1})
+        this.setState({current_page: Number(this.state.current_page - 1)})
     }
     nextPage(event) {
         this.getPage(this.state.current_page + 1, this.state.sort_type)
-        this.setState({current_page: this.state.current_page + 1})
+        this.setState({current_page: Number(this.state.current_page + 1)})
     }
     sortChange(event) {
         console.log(event.target.value);
