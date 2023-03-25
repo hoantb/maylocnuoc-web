@@ -18,16 +18,19 @@ class Shop extends Component {
             product_each_page: 9,
             pages: [],
             current_page: null,
-            special_products: []
+            special_products: [],
+            totalProducts: 0,
+            sort_type: "default"
         }
 
         this.clickPage = this.clickPage.bind(this);
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
+        this.sortChange = this.sortChange.bind(this)
     }
 
-    getPage(page) {
-        fetch( ConstantsVar.API_URL + "/api/san-pham" + "?page=" + page)
+    getPage(page, sort_type) {
+        fetch( ConstantsVar.API_URL + "/api/san-pham" + "?page=" + page + "&sort-type=" + sort_type)
         .then(res => res.json())
         .then(
             (result) => {
@@ -54,13 +57,16 @@ class Shop extends Component {
                 for (let i = 0; i < totalPages; i++){
                     pages.push( i + 1);
                 }
-                this.setState({products: result.results, products_row: products_row, totalPages: totalPages, pages: pages, current_page: page});
+                this.setState({products: result.results, products_row: products_row,
+                    totalPages: totalPages, pages: pages, current_page: page,
+                    totalProducts: result.count
+                });
             }
         )
     }
 
     componentDidMount() {
-        this.getPage(1);
+        this.getPage(1, this.state.sort_type);
         fetch( ConstantsVar.API_URL + "/api/danh-muc" + "/")
         .then(res => res.json())
         .then(
@@ -77,17 +83,42 @@ class Shop extends Component {
         )
     }
     clickPage(event) {
-        this.getPage(event.target.innerHTML)
+        this.getPage(event.target.innerHTML, this.state.sort_type)
         this.setState({current_page: event.target.innerHTML})
     }
 
     previousPage(event) {
-        this.getPage(this.state.current_page - 1)
+        this.getPage(this.state.current_page - 1, this.state.sort_type)
         this.setState({current_page: this.state.current_page - 1})
     }
     nextPage(event) {
-        this.getPage(this.state.current_page + 1)
+        this.getPage(this.state.current_page + 1, this.state.sort_type)
         this.setState({current_page: this.state.current_page + 1})
+    }
+    sortChange(event) {
+        console.log(event.target.value);
+        let value = event.target.value;
+        if (value === "Giá: thấp đến cao") 
+        {
+            this.getPage(this.state.current_page, "price_low_to_high")
+            this.setState({sort_type: "price_low_to_high"})
+        }
+        else if(value === "Giá: cao đến thấp") {
+            this.getPage(this.state.current_page, "price_high_to_low")
+            this.setState({sort_type: "price_high_to_low"})
+        }
+        else if(value === "Phổ Biến") {
+            this.getPage(this.state.current_page, "popular")
+            this.setState({sort_type: "popular"})
+        }
+        else if(value === "Mới Nhất") {
+            this.getPage(this.state.current_page, "latest")
+            this.setState({sort_type: "latest"})
+        }
+        else {
+            this.getPage(this.state.current_page, "default")
+            this.setState({sort_type: "default"})
+        }
     }
     render() {
         return (
@@ -118,7 +149,7 @@ class Shop extends Component {
                                         special_product => (
                                                 <div key={"san_pham_noi_bat" + special_product.id} className="shop_1l2i clearfix">
                                                     <img src={special_product.san_pham.hinh_anh} alt="abc"/>
-                                                    <h5 className="mgt"><a href="shop_detail.html">{special_product.san_pham.ten}</a></h5>
+                                                    <h5 className="mgt"><Link to={"/chi-tiet-san-pham/" + special_product.san_pham.id}>{special_product.san_pham.ten}</Link></h5>
                                                     <h6 className="col_1">{special_product.san_pham.gia}</h6>
                                                 </div>
                                         )
@@ -132,13 +163,13 @@ class Shop extends Component {
                         <div className="shop_1r clearfix">
                         <div className="col-sm-6 space_left">
                             <div className="shop_1rl clearfix">
-                            <p className="mgt">Tìm Thấy 9 Sản Phẩm</p>
+                            <p className="mgt">Tìm Thấy {this.state.totalProducts} Sản Phẩm</p>
                             </div>
                         </div>
                         <div className="col-sm-6 space_left">
                             <div className="shop_1rr text-right clearfix">
                             <p className="mgt">Sắp Xếp:</p>
-                            <select className="form-control">
+                            <select onChange={this.sortChange} className="form-control">
                                 <option>Mặc Định</option>
                                 <option>Phổ Biến</option>
                                 <option>Mới Nhất</option>
