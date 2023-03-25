@@ -47,12 +47,6 @@ class Sell extends Component {
                                                     <div className="arriv_2m1 clearfix">
                                                         <a href="#"><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></a>
                                                     </div>
-                                                    <div className="arriv_2m2 clearfix">
-                                                    <h5 className="text-center mgt">New</h5>
-                                                    </div>
-                                                    <div className="arriv_2m2n clearfix">
-                                                    <h5 className="text-center mgt">Sale</h5>
-                                                    </div>
                                                     <div className="arriv_2m3 clearfix">
                                                     <h4 className="bold mgt">{special_product.san_pham.ten}</h4>
                                                     {/* <p><a href="#">Naminos elementum disus tincidunts cosmo de cosmopolis</a></p>
@@ -86,12 +80,6 @@ class Sell extends Component {
                                                     <div className="arriv_2m clearfix">
                                                     <div className="arriv_2m1 clearfix">
                                                         <a href="#"><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></a>
-                                                    </div>
-                                                    <div className="arriv_2m2 clearfix">
-                                                        <h5 className="text-center mgt">New</h5>
-                                                    </div>
-                                                    <div className="arriv_2m2n clearfix">
-                                                    <h5 className="text-center mgt">Sale</h5>
                                                     </div>
                                                     <div className="arriv_2m3 clearfix">
                                                     <h4 className="bold mgt">{special_product.san_pham.ten}</h4>
