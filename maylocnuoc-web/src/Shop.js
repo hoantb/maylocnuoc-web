@@ -13,18 +13,26 @@ class Shop extends Component {
             products: [],
             products_row: [],
             product_each_row: 3,
-            categories: []
+            categories: [],
+            totalPages: 0,
+            product_each_page: 9,
+            pages: [],
+            current_page: null,
+            special_products: []
         }
+
+        this.clickPage = this.clickPage.bind(this);
+        this.nextPage = this.nextPage.bind(this);
+        this.previousPage = this.previousPage.bind(this);
     }
 
-    componentDidMount() {
-        
-        fetch( ConstantsVar.API_URL + "/api/san-pham" + "/")
+    getPage(page) {
+        fetch( ConstantsVar.API_URL + "/api/san-pham" + "?page=" + page)
         .then(res => res.json())
         .then(
             (result) => {
                 
-                let allProduct = result;
+                let allProduct = result.results;
                 let num = this.state.product_each_row;
                 let rows = Math.ceil(allProduct.length / num);
                 let products_row = []
@@ -38,10 +46,21 @@ class Shop extends Component {
                     }
                     products_row.push(products_column);
                 }
-                console.log(products_row)
-                this.setState({products: result, products_row: products_row});
+                //console.log(products_row)
+                let product_each_page = this.state.product_each_page;
+                let totalPages = Math.ceil(result.count / product_each_page);
+                console.log(totalPages)
+                let pages = []
+                for (let i = 0; i < totalPages; i++){
+                    pages.push( i + 1);
+                }
+                this.setState({products: result.results, products_row: products_row, totalPages: totalPages, pages: pages, current_page: page});
             }
         )
+    }
+
+    componentDidMount() {
+        this.getPage(1);
         fetch( ConstantsVar.API_URL + "/api/danh-muc" + "/")
         .then(res => res.json())
         .then(
@@ -49,6 +68,26 @@ class Shop extends Component {
                 this.setState({categories: result})
             }
         )
+        fetch( ConstantsVar.API_URL + "/api/san-pham-noi-bat/")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({special_products: result})
+            }
+        )
+    }
+    clickPage(event) {
+        this.getPage(event.target.innerHTML)
+        this.setState({current_page: event.target.innerHTML})
+    }
+
+    previousPage(event) {
+        this.getPage(this.state.current_page - 1)
+        this.setState({current_page: this.state.current_page - 1})
+    }
+    nextPage(event) {
+        this.getPage(this.state.current_page + 1)
+        this.setState({current_page: this.state.current_page + 1})
     }
     render() {
         return (
@@ -60,74 +99,34 @@ class Shop extends Component {
                     <div className="row">
                     <div className="shop_1 clearfix">
                         <div className="col-sm-3">
-                        <div className="shop_1l mgt clearfix">
-                        <h4 className="mgt">Color</h4>
-                        <ul>
-                        <li className="bg_1"></li>
-                        <li className="bg_2"></li>
-                        <li className="bg_3"></li>
-                        <li className="bg_4"></li>
-                        <li className="bg_5"></li>
-                        <li className="bg_6"></li>
-                        <li className="bg_7"></li>
-                        <li className="bg_8"></li>
-                        <li className="bg_9"></li>
-                        <li className="bg_10"></li>
-                        <li className="bg_11"></li>
-                        <li className="bg_12"></li>
-                        <li className="bg_13"></li>
-                        </ul>
-                        </div>
-                        <div className="shop_1l clearfix">
-                        <h4 className="mgt">Danh Mục</h4>
-                            {
-                                this.state.categories &&
-                                this.state.categories.map(
-                                    category => (
-                                        <h5 key={"category_" + category.id}><input type="checkbox"/> <span>{category.ten}</span></h5>
+                            <div className="shop_1l clearfix">
+                                <h4 className="mgt">Danh Mục</h4>
+                                {
+                                    this.state.categories &&
+                                    this.state.categories.map(
+                                        category => (
+                                            <h5 key={"category_" + category.id}><input type="checkbox"/> <span>{category.ten}</span></h5>
+                                        )
                                     )
-                                )
-                            }
-                        </div>
-                        <div className="shop_1l2 clearfix">
-                        <h4 className="mgt">Best Seller</h4>
-                        <div className="shop_1l2i clearfix">
-                        <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/20.jpg" alt="abc"/>
-                        <h5 className="mgt"><a href="shop_detail.html">Thermometer Gun</a></h5>
-                        <h6 className="col_1">$90.00</h6>
-                        <span>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        </span>
-                        </div>
-                        <div className="shop_1l2i clearfix">
-                        <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/21.jpg" alt="abc"/>
-                        <h5 className="mgt"><a href="shop_detail.html">Cosmetic Contain</a></h5>
-                        <h6 className="col_1">$80.00</h6>
-                        <span>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star-half-o"></i>
-                        </span>
-                        </div>
-                        <div className="shop_1l2i clearfix">
-                        <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/22.jpg" alt="abc"/>
-                        <h5 className="mgt"><a href="shop_detail.html">Protective Gloves</a></h5>
-                        <h6 className="col_1">$60.00</h6>
-                        <span>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star-o"></i>
-                        </span>
-                        </div>
-                        </div>
+                                }
+                            </div>
+                            <div className="shop_1l2 clearfix">
+                                <h4 className="mgt">SẢN PHẨM NỔI BẬT</h4>
+                                {
+                                    this.state.special_products &&
+                                    this.state.special_products.map(
+                                        special_product => (
+                                                <div key={"san_pham_noi_bat" + special_product.id} className="shop_1l2i clearfix">
+                                                    <img src={special_product.san_pham.hinh_anh} alt="abc"/>
+                                                    <h5 className="mgt"><a href="shop_detail.html">{special_product.san_pham.ten}</a></h5>
+                                                    <h6 className="col_1">{special_product.san_pham.gia}</h6>
+                                                </div>
+                                        )
+                                    )
+                                }
+                                
+                            </div>
+                            
                         </div>
                         <div className="col-sm-9">
                         <div className="shop_1r clearfix">
@@ -140,11 +139,11 @@ class Shop extends Component {
                             <div className="shop_1rr text-right clearfix">
                             <p className="mgt">Sắp Xếp:</p>
                             <select className="form-control">
-                                <option>Default</option>
-                                <option>Popularity</option>
-                                <option>Latest</option>
-                                <option>Price: low to high</option>
-                                <option>Price: high to low</option>
+                                <option>Mặc Định</option>
+                                <option>Phổ Biến</option>
+                                <option>Mới Nhất</option>
+                                <option>Giá: thấp đến cao</option>
+                                <option>Giá: cao đến thấp</option>
                             </select>
                             </div>
                         </div>
@@ -163,7 +162,7 @@ class Shop extends Component {
                                                             </div>
                                                             <div className="arriv_2m3 clearfix">
                                                             <h4 className="bold mgt">{product.ten}</h4>
-                                                            <p><Link to={"/chi-tiet-san-pham/" + product.id}>{product.mo_ta_ngan}</Link></p>
+                                                            {/* <p><Link to={"/chi-tiet-san-pham/" + product.id}>{product.mo_ta_ngan}</Link></p> */}
                                                             <h3 className="normal">
                                                             <span className="span_2">{product.gia}</span>
                                                             <span className="span_3 col_1"> {product.gia}</span> 
@@ -179,17 +178,47 @@ class Shop extends Component {
                                 )
                             )
                         }
-                        
                         <div className="center_product_1r4r text-center clearfix">
                             <ul className="pagination mgt">
-                                <li className="disabled"><a href="shop_detail.html">«</a></li>
-                                <li className="active"><a href="shop_detail.html">1 <span className="sr-only">(current)</span></a></li>
-                                <li><a href="shop_detail.html">2</a></li>
-                                <li><a href="shop_detail.html">3</a></li>
-                                <li><a href="shop_detail.html">4</a></li>
-                                <li><a href="shop_detail.html">5</a></li>
-                                <li><a href="shop_detail.html">»</a></li>
-                                </ul>
+                                {
+                                    this.state.current_page &&
+                                    this.state.current_page > 1 &&
+                                    <li className=""><Link onClick={this.previousPage}>«</Link></li>
+                                }
+                                {
+                                    this.state.current_page &&
+                                    this.state.current_page <= 1 &&
+                                    <li className="disabled"><Link >«</Link></li>
+                                }
+                                
+                                {
+                                    this.state.pages &&
+                                    this.state.pages.map(
+                                        page => (
+                                            <React.Fragment key={"parent_pagination_" + page}>
+                                            {
+                                                this.state.current_page == page &&
+                                                <li className="active" key={"pagination_" + page} ><Link onClick={this.clickPage}>{page}</Link></li>
+                                            }
+                                            {
+                                                this.state.current_page != page &&
+                                                <li className="" key={"pagination_" + page} ><Link onClick={this.clickPage}>{page}</Link></li>
+                                            }
+                                            </React.Fragment>
+                                        )
+                                    )
+                                }
+                                {
+                                    this.state.current_page &&
+                                    this.state.current_page < this.state.totalPages &&
+                                    <li><Link onClick={this.nextPage}>»</Link></li>
+                                }
+                                {
+                                    this.state.current_page &&
+                                    this.state.current_page >= this.state.totalPages &&
+                                    <li className="disabled"><Link>»</Link></li>
+                                }
+                            </ul>
                         </div>
                         </div>
                     </div>
