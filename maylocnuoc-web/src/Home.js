@@ -11,6 +11,7 @@ import Offer from "./Offer";
 
 class Home extends Component {
   componentDidMount() {
+    
   }
   render() {
     return (
