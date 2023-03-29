@@ -45,23 +45,31 @@ class Center extends Component {
                     </div>
                     </div>
                     <div className="item slides">
-                    <div className="slide-3"></div>
-                    <div className="hero clearfix">
+                        <div className="slide-3"></div>
                         <div className="hero clearfix">
-                        <div className="col-sm-6">
-                            <h5 className="mgt col_1">New Arrivals</h5>
-                            <h1>Fusce Nec Dapibus  <br/>  <span>Tellus</span> </h1>
-                            <p>Nulla quis sem at nibh elementum imperdiet Fusce nec tellus sed augue  semper porta Vestibulum lacinia arcu eget nulla!</p>
-                            <h4><a className="button" href="#"><i className="fa fa-shopping-cart"></i> Shop Now</a></h4>
-                            <h4 className="col_1 normal">$49.00</h4>
-                        </div>
-                        <div className="col-sm-6">
-                        <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/3.jpg" className="iw" alt="abc"/>
+                            <div className="hero clearfix">
+                                <div className="col-sm-6">
+                                    <h5 className="mgt col_1">New Arrivals</h5>
+                                    <h1>Fusce Nec Dapibus  <br/>  <span>Tellus</span> </h1>
+                                    <p>Nulla quis sem at nibh elementum imperdiet Fusce nec tellus sed augue  semper porta Vestibulum lacinia arcu eget nulla!</p>
+                                    <h4><a className="button" href="#"><i className="fa fa-shopping-cart"></i> Shop Now</a></h4>
+                                    <h4 className="col_1 normal">$49.00</h4>
+                                </div>
+                                <div className="col-sm-6">
+                                    <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/3.jpg" className="iw" alt="abc"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
                 </div>
-                </div>
+                <a className="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span className="glyphicon glyphicon-chevron-left"></span>
+                    <span className="sr-only">Previous</span>
+                </a>
+                <a className="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span className="glyphicon glyphicon-chevron-right"></span>
+                    <span className="sr-only">Next</span>
+                </a>
             </div>
         </section>
     );

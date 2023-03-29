@@ -667,6 +667,29 @@ body{
   @media (min-width:1201px) and (max-width:1350px) {
   
    }
+
+   .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index:10;
+      padding-top:10px;
+      padding-bottom:10px;
+      background-color: #191a1d;
+    }
+    .sticky {
+      top: -40px;
+      transform: translateY(40px);
+      transition: transform .3s;
+    }
+    .sticky{
+      display:block!important;
+      margin-right:250px!important; 
+     }
+    
+    .sticky .drop_1{
+    margin-top:11px!important; 
+     }
   
   
   

@@ -18,12 +18,12 @@ class Home extends Component {
         <div>
              <Header />
              <Center />
-             <Collection />
-             <Category />
+             {/* <Collection />
+             <Category /> */}
              <Sell />
-             <CollectionO />
+             {/* <CollectionO /> */}
              <Arrive />
-             <Offer />
+             {/* <Offer /> */}
              <Footer />
              
         </div>

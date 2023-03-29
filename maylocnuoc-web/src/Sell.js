@@ -24,16 +24,16 @@ class Sell extends Component {
             <section id="sell">
                 <div className="container">
                 <div className="row">
-                <div className="sell_1 clearfix">
-                            <div className="col-sm-9 space_left">
-                            <h2 className="mgt">Sản Phẩm Nổi Bật</h2>
-                            </div>
-                            <div className="col-sm-3 space_left">
-                                <div className="controls pull-right hidden-xs">
-                                    <a className="left fa fa-chevron-left btn btn-success" href="#carousel-example" data-slide="prev"></a><a className="right fa fa-chevron-right btn btn-success" href="#carousel-example" data-slide="next"></a>
-                                </div>
+                    <div className="sell_1 clearfix">
+                        <div className="col-sm-9 space_left">
+                        <h2 className="mgt">Sản Phẩm Nổi Bật</h2>
+                        </div>
+                        <div className="col-sm-3 space_left">
+                            <div className="controls pull-right hidden-xs">
+                                <a className="left fa fa-chevron-left btn btn-success" href="#carousel-example" data-slide="prev"></a><a className="right fa fa-chevron-right btn btn-success" href="#carousel-example" data-slide="next"></a>
                             </div>
                         </div>
+                    </div>
                 <div id="carousel-example" className="carousel slide hidden-xs" data-ride="carousel">
                             <div className="carousel-inner">
                                 <div className="item active">
@@ -42,7 +42,7 @@ class Sell extends Component {
                                         this.state.special_products.map(
                                             (special_product, index) => (
                                                 index < 4 &&
-                                                <div className="col-sm-3 space_left">
+                                                <div key={"special_product_" + special_product.id} className="col-sm-3 space_left">
                                                     <div className="arriv_2m clearfix">
                                                     <div className="arriv_2m1 clearfix">
                                                         <a href="#"><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></a>
@@ -76,7 +76,7 @@ class Sell extends Component {
                                             (special_product, index) => (
                                                 index > 3 &&
                                                 index < 8 &&
-                                                <div className="col-sm-3 space_left">
+                                                <div key={"special_product_" + special_product.id} className="col-sm-3 space_left">
                                                     <div className="arriv_2m clearfix">
                                                     <div className="arriv_2m1 clearfix">
                                                         <a href="#"><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></a>

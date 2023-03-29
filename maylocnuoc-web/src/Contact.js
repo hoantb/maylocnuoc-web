@@ -102,7 +102,7 @@ class Contact extends Component {
                 </div>
                 <div className="contact_3 clearfix">
                 <div className="col-sm-12 clearfix">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.075549209809!2d106.63470605034894!3d10.80552569226403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295a4f6bb5d3%3A0xa159854d96f8ac30!2zNjM4IMSQLiBD4buZbmcgSMOyYSwgUGjGsOG7nW5nIDE1LCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1679650432121!5m2!1sen!2s" width="100%" height="500px" style={{"border": "0"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.075549209809!2d106.63470605034894!3d10.80552569226403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295a4f6bb5d3%3A0xa159854d96f8ac30!2zNjM4IMSQLiBD4buZbmcgSMOyYSwgUGjGsOG7nW5nIDE1LCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1679650432121!5m2!1sen!2s" width="100%" height="500px" style={{"border": "0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 </div>
