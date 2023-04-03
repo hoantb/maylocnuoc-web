@@ -3,115 +3,189 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "./Contact.css"
 import { Link } from "react-router-dom";
+import * as ConstantsVar from "./common/constants";
+import { Modal, Button } from "react-bootstrap";
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal';
+//import TestModal from "./TestModal";
 class Contact extends Component {
-  componentDidMount() {
-  }
-  render() {
-    return (
-        <div>
-             <Header />
-             <section id="center" className="center_shop"> 
-                <div className="container">
-                <div className="row">
-                <div className="center_shop_1 text-center clearfix">
-                    <div className="col-sm-12">
-                    <h1 className="mgt">Liên Hệ</h1>
-                    <h5><a href="#">Trang Chủ</a> / <span className="col_1">Liên Hệ</span></h5>
-                    </div>
-                </div>
-                </div>
-                </div>
-                </section>
+    constructor(props) {
+        super(props);
+        this.formGopYHoTen = React.createRef();
+        this.formGopYEmail = React.createRef();
+        this.formGopYSoDientThoai = React.createRef();
+        this.formGopYTieuDe = React.createRef();
+        this.formGopYTinNhan = React.createRef();
+        this.submitTinNhanGopY = this.submitTinNhanGopY.bind(this);
+        this.clearForm = this.clearForm.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.state = {
+            show: false
+        }
+    }
 
-                <section id="contact">
-                <div className="container">
-                <div className="row">
-                <div className="contact_1 clearfix">
-                    <div className="col-sm-3">
-                    <div className="contact_1i text-center clearfix">
-                    <span><i className="fa fa-map-marker col_1"></i></span>
-                    <h4>Address</h4>
-                    <p><Link href="#">638 Cộng Hòa, P. 13,</Link></p>
-                    <p><Link href="#">Q. Tân Bình, Tp. HCM</Link></p>
+    handleClose() {
+        this.setState({
+            show: !this.state.show
+        });
+      };
+
+    componentDidMount() {
+        
+    }
+
+    clearForm() {
+        this.formGopYHoTen.current.value = "";
+        this.formGopYEmail.current.value = "";
+        this.formGopYSoDientThoai.current.value = "";
+        this.formGopYTieuDe.current.value = "";
+        this.formGopYTinNhan.current.value = "";
+    }
+
+    submitTinNhanGopY(evt){
+        let options = {
+            method: "POST",
+            body: JSON.stringify({
+                ten: this.formGopYHoTen.current.value,
+                email: this.formGopYEmail.current.value,
+                so_dien_thoai: this.formGopYSoDientThoai.current.value,
+                tieu_de: this.formGopYTieuDe.current.value,
+                tin_nhan: this.formGopYTinNhan.current.value,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }
+        fetch( ConstantsVar.API_URL + "/api/tin-nhan-gop-y", options)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log("ok");
+                this.clearForm();
+                this.setState({show: true});
+            }
+        )
+    }
+
+    render() {
+        return (
+            <div>
+                <Header />
+                <section id="center" className="center_shop"> 
+                    <div className="container">
+                    <div className="row">
+                    <div className="center_shop_1 text-center clearfix">
+                        <div className="col-sm-12">
+                        <h1 className="mgt">Liên Hệ</h1>
+                        <h5><a href="#">Trang Chủ</a> / <span className="col_1">Liên Hệ</span></h5>
+                        </div>
                     </div>
                     </div>
-                    <div className="col-sm-3">
-                    <div className="contact_1i text-center clearfix">
-                    <span><i className="fa fa-phone col_1"></i></span>
-                    <h4>Điện Thoại</h4>
-                    <p><Link href="#">Hotline: 090 44 54 090</Link></p>
-                    <p><Link href="#">Tư Vấn:  028 62924598</Link></p>
+                    </div>
+                    </section>
+
+                    <section id="contact">
+                    <div className="container">
+                    <div className="row">
+                    <div className="contact_1 clearfix">
+                        <div className="col-sm-3">
+                        <div className="contact_1i text-center clearfix">
+                        <span><i className="fa fa-map-marker col_1"></i></span>
+                        <h4>Address</h4>
+                        <p><Link href="#">638 Cộng Hòa, P. 13,</Link></p>
+                        <p><Link href="#">Q. Tân Bình, Tp. HCM</Link></p>
+                        </div>
+                        </div>
+                        <div className="col-sm-3">
+                        <div className="contact_1i text-center clearfix">
+                        <span><i className="fa fa-phone col_1"></i></span>
+                        <h4>Điện Thoại</h4>
+                        <p><Link href="#">Hotline: 090 44 54 090</Link></p>
+                        <p><Link href="#">Tư Vấn:  028 62924598</Link></p>
+                        </div>
+                        </div>
+                        <div className="col-sm-3">
+                        <div className="contact_1i text-center clearfix">
+                        <span><i className="fa fa-envelope col_1"></i></span>
+                        <h4>Email</h4>
+                        <p><Link href="#">admin@locnuocvanloc.com</Link></p>
+                        <p><Link href="#">vanloc@gmail.com</Link></p>
+                        </div>
+                        </div>
+                        <div className="col-sm-3">
+                        <div className="contact_1i text-center clearfix">
+                        <span><i className="fa fa-clock-o col_1"></i></span>
+                        <h4>Giờ Làm Việc</h4>
+                        <p>Thứ 2 - Thứ 6</p>
+                        <p>8:00AM - 8:00PM</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="contact_2 clearfix">
+                        <div className="col-sm-8">
+                            <div className="contact_2l clearfix">
+                                <h3>Tin Nhắn Góp Ý</h3>
+                            </div><br/>
+                            <div className="contact_2l1 clearfix">
+                                <div className="col-sm-6">
+                                <h5>Họ Và Tên</h5>
+                                <input id="test1" className="form-control" type="text" ref={this.formGopYHoTen}/>
+                                </div>
+                                <div className="col-sm-6">
+                                    <h5>Địa Chỉ Email</h5>
+                                    <input id="test2" className="form-control" type="text" ref={this.formGopYEmail}/>
+                                </div>
+                            </div>
+                            <div className="contact_2l1 clearfix">
+                                <div className="col-sm-6">
+                                    <h5>Số Điện Thoại</h5>
+                                    <input id="test3" className="form-control" type="text" ref={this.formGopYSoDientThoai}/>
+                                </div>
+                                <div className="col-sm-6">
+                                    <h5>Tiêu Đề</h5>
+                                    <input  id="test4" className="form-control" type="text" ref={this.formGopYTieuDe}/>
+                                </div>
+                            </div>
+                            <div className="contact_2l1 clearfix">
+                                <div className="col-sm-12">
+                                    <h5>Tin Nhắn</h5>
+                                    <textarea id="test5" className="form-control form_1" ref={this.formGopYTinNhan}></textarea>
+                                    <h5><button onClick={this.submitTinNhanGopY} className="button" >Gửi Tin Nhắn</button></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-4 space_left">
+                        <div className="contact_2l clearfix">
+                        <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/48.jpg" className="iw" alt="abc"/>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="contact_3 clearfix">
+                    <div className="col-sm-12 clearfix">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.075549209809!2d106.63470605034894!3d10.80552569226403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295a4f6bb5d3%3A0xa159854d96f8ac30!2zNjM4IMSQLiBD4buZbmcgSMOyYSwgUGjGsOG7nW5nIDE1LCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1679650432121!5m2!1sen!2s" width="100%" height="500px" style={{"border": "0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                     </div>
-                    <div className="col-sm-3">
-                    <div className="contact_1i text-center clearfix">
-                    <span><i className="fa fa-envelope col_1"></i></span>
-                    <h4>Email</h4>
-                    <p><Link href="#">admin@locnuocvanloc.com</Link></p>
-                    <p><Link href="#">vanloc@gmail.com</Link></p>
                     </div>
-                    </div>
-                    <div className="col-sm-3">
-                    <div className="contact_1i text-center clearfix">
-                    <span><i className="fa fa-clock-o col_1"></i></span>
-                    <h4>Giờ Làm Việc</h4>
-                    <p>Thứ 2 - Thứ 6</p>
-                    <p>8:00AM - 8:00PM</p>
-                    </div>
-                    </div>
-                </div>
-                <div className="contact_2 clearfix">
-                    <div className="col-sm-8">
-                    <div className="contact_2l clearfix">
-                    <h3>Tin Nhắn Góp Ý</h3>
-                    </div><br/>
-                    <div className="contact_2l1 clearfix">
-                    <div className="col-sm-6">
-                    <h5>Họ Và Tên</h5>
-                    <input className="form-control" type="text"/>
-                    </div>
-                    <div className="col-sm-6">
-                    <h5>Địa Chỉ Email</h5>
-                    <input className="form-control" type="text"/>
-                    </div>
-                    </div>
-                    <div className="contact_2l1 clearfix">
-                    <div className="col-sm-6">
-                    <h5>Số Điện Thoại</h5>
-                    <input className="form-control" type="text"/>
-                    </div>
-                    <div className="col-sm-6">
-                    <h5>Tiêu Đề</h5>
-                    <input className="form-control" type="text"/>
-                    </div>
-                    </div>
-                    <div className="contact_2l1 clearfix">
-                    <div className="col-sm-12">
-                    <h5>Tin Nhắn</h5>
-                    <textarea className="form-control form_1"></textarea>
-                    <h5><Link className="button" href="#">Gửi Tin Nhắn</Link></h5>
-                    </div>
-                    
-                    </div>
-                    </div>
-                    <div className="col-sm-4 space_left">
-                    <div className="contact_2l clearfix">
-                    <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/48.jpg" className="iw" alt="abc"/>
-                    </div>
-                    </div>
-                </div>
-                <div className="contact_3 clearfix">
-                <div className="col-sm-12 clearfix">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.075549209809!2d106.63470605034894!3d10.80552569226403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295a4f6bb5d3%3A0xa159854d96f8ac30!2zNjM4IMSQLiBD4buZbmcgSMOyYSwgUGjGsOG7nW5nIDE1LCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1679650432121!5m2!1sen!2s" width="100%" height="500px" style={{"border": "0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                </div>
-                </div>
-                </section>
-             <Footer />
-        </div>
-    );
-  }
+                    </section>
+                <Footer />
+                <Modal show={this.state.show} onHide={this.handleClose} animation={false} fullscreen={false}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={this.handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={this.handleClose}>
+                        Save Changes
+                    </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        );
+    }
 }
  
 export default Contact;
