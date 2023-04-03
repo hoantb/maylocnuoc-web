@@ -4,7 +4,8 @@ import Footer from "./Footer";
 import "./Contact.css"
 import { Link } from "react-router-dom";
 import * as ConstantsVar from "./common/constants";
-import { Modal, Button } from "react-bootstrap";
+import Popup from 'reactjs-popup';
+// import { Modal, Button } from "react-bootstrap";
 // import Button from 'react-bootstrap/Button';
 // import Modal from 'react-bootstrap/Modal';
 //import TestModal from "./TestModal";
@@ -168,21 +169,24 @@ class Contact extends Component {
                     </div>
                     </div>
                     </section>
+                    <Popup modal open={this.state.show}>
+                        <div className="modalGopY">
+                            <button className="close" onClick={this.handleClose}>
+                            &times;
+                            </button>
+                            <div className="header"> Gửi tin nhắn thành công </div>
+                            <div className="content">
+                                {' '}
+                                Cảm ơn bạn đã góp ý
+                            </div>
+                            <div className="actions">
+                                <button className="button" onClick={this.handleClose} >
+                                    OK
+                                </button>
+                            </div>
+                        </div>
+                    </Popup>
                 <Footer />
-                <Modal show={this.state.show} onHide={this.handleClose} animation={false} fullscreen={false}>
-                    <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={this.handleClose}>
-                        Save Changes
-                    </Button>
-                    </Modal.Footer>
-                </Modal>
             </div>
         );
     }
