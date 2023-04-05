@@ -7,10 +7,17 @@ class Header extends Component {
         super(props);
         this.state = {
             sticky: 0,
-            navbar_height: 0
+            navbar_height: 0,
+            search_name: ""
         }
         this.navbar_sticky_ref = React.createRef();
         this.handleScroll = this.handleScroll.bind(this);
+        this.setSearchName = this.setSearchName.bind(this);
+    }
+
+    setSearchName (evt) {
+        console.log(evt.target.value);
+        this.setState({search_name: evt.target.value});
     }
 
     handleScroll () {
@@ -89,8 +96,8 @@ class Header extends Component {
                                 <li><Link className="tag_m" to="/lien-he">Liên Hệ</Link></li>
                             </ul>
                                 <ul className="nav navbar-nav navbar-right">
-                                    <li className="dropdown" style={{"paddingTop": "7px", "width": "150px"}}> <input  type="text" className="form-control" placeholder="Tìm Kiếm..." /></li>
-                                    <li className="dropdown"><a className="tag_m1" href="#" data-toggle="dropdown"><span className="fa fa-search"></span></a>
+                                    <li className="dropdown" style={{"paddingTop": "7px", "width": "150px"}}> <input onChange={this.setSearchName} type="text" className="form-control" placeholder="Tìm Kiếm..." /></li>
+                                    <li className="dropdown"><Link to={"/san-pham/" + this.state.search_name } className="tag_m1" data-toggle="dropdown"><span className="fa fa-search"></span></Link>
                                     </li>
                                 </ul>
                             </div>

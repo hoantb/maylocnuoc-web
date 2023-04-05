@@ -5,6 +5,7 @@ import CenterShop from "./CenterShop";
 import './Shop.css'
 import * as ConstantsVar from "./common/constants";
 import { Link } from "react-router-dom";
+import withRouter from "./common/withRouter";
 
 class Shop extends Component {
     constructor(props) {
@@ -20,9 +21,10 @@ class Shop extends Component {
             current_page: null,
             special_products: [],
             totalProducts: 0,
-            sort_type: "default"
+            sort_type: "default",
+            searchName: props.params.ten
         }
-
+        console.log(props);
         this.clickPage = this.clickPage.bind(this);
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
@@ -30,7 +32,11 @@ class Shop extends Component {
     }
 
     getPage(page, sort_type) {
-        fetch( ConstantsVar.API_URL + "/api/san-pham" + "?page=" + page + "&sort-type=" + sort_type)
+        let searchName = "";
+        if (this.props.params.ten) {
+            searchName = this.props.params.ten;
+        }
+        fetch( ConstantsVar.API_URL + "/api/san-pham" + "?page=" + page + "&sort-type=" + sort_type + "&search-name=" + searchName)
         .then(res => res.json())
         .then(
             (result) => {
@@ -52,14 +58,14 @@ class Shop extends Component {
                 //console.log(products_row)
                 let product_each_page = this.state.product_each_page;
                 let totalPages = Math.ceil(result.count / product_each_page);
-                console.log(totalPages)
                 let pages = []
                 for (let i = 0; i < totalPages; i++){
                     pages.push( i + 1);
                 }
                 this.setState({products: result.results, products_row: products_row,
                     totalPages: totalPages, pages: pages, current_page: page,
-                    totalProducts: result.count
+                    totalProducts: result.count,
+                    searchName: this.props.params.ten
                 });
             }
         )
@@ -123,7 +129,10 @@ class Shop extends Component {
     }
     render() {
         return (
-            <React.Fragment>
+            <div>
+                {   this.state.searchName != this.props.params.ten &&
+                    this.getPage(1, this.state.sort_type)
+                }
                 <Header/>
                 <CenterShop/>
                 <section id="shop" className="clearfix"> 
@@ -258,9 +267,9 @@ class Shop extends Component {
                     </div>
                     </section>
                 <Footer />
-            </React.Fragment>
+            </div>
         );
     }
 }
  
-export default Shop;
+export default withRouter(Shop);
