@@ -22,21 +22,23 @@ class Shop extends Component {
             special_products: [],
             totalProducts: 0,
             sort_type: "default",
-            searchName: props.params.ten
+            searchName: props.params.ten,
+            filterType: []
         }
         console.log(props);
         this.clickPage = this.clickPage.bind(this);
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
-        this.sortChange = this.sortChange.bind(this)
+        this.sortChange = this.sortChange.bind(this);
+        this.filter = this.filter.bind(this);
     }
 
-    getPage(page, sort_type) {
+    getPage(page, sort_type, filterType) {
         let searchName = "";
         if (this.props.params.ten) {
             searchName = this.props.params.ten;
         }
-        fetch( ConstantsVar.API_URL + "/api/san-pham" + "?page=" + page + "&sort-type=" + sort_type + "&search-name=" + searchName)
+        fetch( ConstantsVar.API_URL + "/api/san-pham" + "?page=" + page + "&sort-type=" + sort_type + "&search-name=" + searchName + "&categories-filter=" + filterType.toString())
         .then(res => res.json())
         .then(
             (result) => {
@@ -55,7 +57,7 @@ class Shop extends Component {
                     }
                     products_row.push(products_column);
                 }
-                //console.log(products_row)
+
                 let product_each_page = this.state.product_each_page;
                 let totalPages = Math.ceil(result.count / product_each_page);
                 let pages = []
@@ -72,7 +74,7 @@ class Shop extends Component {
     }
 
     componentDidMount() {
-        this.getPage(1, this.state.sort_type);
+        this.getPage(1, this.state.sort_type, this.state.filterType);
         fetch( ConstantsVar.API_URL + "/api/danh-muc" + "/")
         .then(res => res.json())
         .then(
@@ -90,16 +92,16 @@ class Shop extends Component {
     }
     clickPage(event) {
         
-        this.getPage(Number(event.target.innerHTML), this.state.sort_type)
+        this.getPage(Number(event.target.innerHTML), this.state.sort_type, this.state.filterType)
         this.setState({current_page: Number(event.target.innerHTML)})
     }
 
     previousPage(event) {
-        this.getPage(this.state.current_page - 1, this.state.sort_type)
+        this.getPage(this.state.current_page - 1, this.state.sort_type, this.state.filterType)
         this.setState({current_page: Number(this.state.current_page - 1)})
     }
     nextPage(event) {
-        this.getPage(this.state.current_page + 1, this.state.sort_type)
+        this.getPage(this.state.current_page + 1, this.state.sort_type, this.state.filterType)
         this.setState({current_page: Number(this.state.current_page + 1)})
     }
     sortChange(event) {
@@ -107,31 +109,50 @@ class Shop extends Component {
         let value = event.target.value;
         if (value === "Giá: thấp đến cao") 
         {
-            this.getPage(this.state.current_page, "price_low_to_high")
+            this.getPage(this.state.current_page, "price_low_to_high", this.state.filterType)
             this.setState({sort_type: "price_low_to_high"})
         }
         else if(value === "Giá: cao đến thấp") {
-            this.getPage(this.state.current_page, "price_high_to_low")
+            this.getPage(this.state.current_page, "price_high_to_low", this.state.filterType)
             this.setState({sort_type: "price_high_to_low"})
         }
         else if(value === "Phổ Biến") {
-            this.getPage(this.state.current_page, "popular")
+            this.getPage(this.state.current_page, "popular", this.state.filterType)
             this.setState({sort_type: "popular"})
         }
         else if(value === "Mới Nhất") {
-            this.getPage(this.state.current_page, "latest")
+            this.getPage(this.state.current_page, "latest", this.state.filterType)
             this.setState({sort_type: "latest"})
         }
         else {
-            this.getPage(this.state.current_page, "default")
+            this.getPage(this.state.current_page, "default", this.state.filterType)
             this.setState({sort_type: "default"})
         }
     }
+
+    filter(evt) {
+        console.log(evt.target.id)
+        let texts = (evt.target.id).split("-")
+        let id = Number(texts[texts.length - 1])
+        if (this.state.filterType.includes(id) == false) {
+            let arr = this.state.filterType;
+            arr.push(id);
+            this.setState({filterType: arr});
+            this.getPage(this.state.current_page, this.state.sort_type, arr);
+        } else {
+            let arr = this.state.filterType;
+            let idx = arr.indexOf(id);
+            arr.splice(idx, 1)
+            this.setState({filterType: arr});
+            this.getPage(this.state.current_page, this.state.sort_type, arr);
+        }
+    }
+
     render() {
         return (
             <div>
                 {   this.state.searchName != this.props.params.ten &&
-                    this.getPage(1, this.state.sort_type)
+                    this.getPage(1, this.state.sort_type, this.state.filterType)
                 }
                 <Header/>
                 <CenterShop/>
@@ -146,7 +167,7 @@ class Shop extends Component {
                                     this.state.categories &&
                                     this.state.categories.map(
                                         category => (
-                                            <h5 key={"category_" + category.id}><input type="checkbox"/> <span>{category.ten}</span></h5>
+                                            <h5 key={"category_" + category.id}><input value="123434" id={"category-cb-" + category.id} onClick={this.filter} type="checkbox"/> <span><Link id={"category-txt-" + category.id} onClick={this.filter} >{category.ten}</Link></span></h5>
                                         )
                                     )
                                 }
