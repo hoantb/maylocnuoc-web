@@ -20,7 +20,6 @@ class AboutUs extends Component {
         .then(
             (result) => {
                 if (result.data && result.data[0]) {
-                    console.log(result.data[0].mo_ta_ngan)
                     this.setState({shortAboutUS: result.data[0].mo_ta_ngan, longAboutUS: result.data[0].mo_ta_dai})
                 }
             }

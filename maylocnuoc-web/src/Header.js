@@ -88,15 +88,15 @@ class Header extends Component {
                             </div>
                             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul className="nav navbar-nav">
-                                <li><Link className="tag_m" to="/">Trang Chủ</Link></li>
-                                <li><Link className="tag_m" to="/gioi-thieu">Giới Thiệu</Link></li>
-                                <li><Link to="/san-pham" className="tag_m" >Sản Phẩm</Link></li>
-                                <li><Link className="tag_m" to="/dich-vu">Dịch Vụ</Link></li>
-                                <li><Link className="tag_m" to="/tin-tuc">Tin Tức</Link></li>
-                                <li><Link className="tag_m" to="/lien-he">Liên Hệ</Link></li>
-                            </ul>
+                                    <li><Link className="tag_m" to="/">Trang Chủ</Link></li>
+                                    <li><Link className="tag_m" to="/gioi-thieu">Giới Thiệu</Link></li>
+                                    <li><Link to="/san-pham" className="tag_m" >Sản Phẩm</Link></li>
+                                    <li><Link className="tag_m" to="/dich-vu">Dịch Vụ</Link></li>
+                                    {/* <li><Link className="tag_m" to="/tin-tuc">Tin Tức</Link></li> */}
+                                    <li><Link className="tag_m" to="/lien-he">Liên Hệ</Link></li>
+                                </ul>
                                 <ul className="nav navbar-nav navbar-right">
-                                    <li className="dropdown" style={{"paddingTop": "7px", "width": "150px"}}> <input onChange={this.setSearchName} type="text" className="form-control" placeholder="Tìm Kiếm..." /></li>
+                                    <li className="dropdown" style={{"paddingTop": "7px", "width": "200px"}}> <input onChange={this.setSearchName} type="text" className="form-control" placeholder="Tìm Kiếm..." /></li>
                                     <li className="dropdown"><Link to={"/san-pham/tim-kiem/" + this.state.search_name } className="tag_m1" data-toggle="dropdown"><span className="fa fa-search"></span></Link>
                                     </li>
                                 </ul>
