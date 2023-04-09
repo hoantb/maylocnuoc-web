@@ -89,7 +89,7 @@ class Shop extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.getPage(1, this.state.sort_type, this.state.categoriesCheckbox);
-        fetch( ConstantsVar.API_URL + "/api/danh-muc" + "/")
+        fetch( ConstantsVar.API_URL + "/api/danh-muc/")
         .then(res => res.json())
         .then(
             (result) => {
