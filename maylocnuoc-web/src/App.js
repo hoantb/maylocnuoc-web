@@ -15,7 +15,10 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/gioi-thieu" element={<AboutUs />} />
-                <Route exact path="/san-pham/:ten?" element={<Shop />} />
+                <Route exact path="san-pham" element={<Shop />} >
+                    <Route exact path="tim-kiem/:ten?" element={<Shop />} ></Route>
+                    <Route exact path="filter/:category?" element={<Shop />} ></Route>
+                </Route>
                 <Route exact path="/dich-vu" element={<Service />} />
                 <Route exact path="/tin-tuc" element={<Blog />} />
                 <Route exact path="/lien-he" element={<Contact />} />

@@ -51,29 +51,29 @@ class Header extends Component {
             <div>
                 <section id="top">
                     <div className="container">
-                    <div className="row">
-                    <div className="top_1 clearfix">
-                        <div className="col-sm-8">
-                        <div className="top_1l clearfix">
-                            <ul className="mgt">
-                            <li><Link to="/lien-he"><i className="fa fa-phone col_1"></i> 028 62924598</Link></li>
-                                <li><Link to="/lien-he"><i className="fa fa-map-marker col_1"></i> 638 Cộng Hòa, Phường 13, Quận Tân Bình, Tp. HCM</Link></li>
-                            </ul>
-                        </div>
-                        </div>
-                        <div className="col-sm-4">
-                            <div className="top_1r clearfix top_1i">
-                                <ul className="navbar-right mgt social-network social-circle">
-                                    <li><a href="#" className="icoRss" title="Theo dõi trên Youtube"><i className="fa fa-rss"></i></a></li>
-                                    <li><a href="#" className="icoFacebook" title="Theo dõi trên Facebook"><i className="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" className="icoTwitter" title="Theo dõi trên Twitter"><i className="fa fa-twitter"></i></a></li>
-                                </ul>
+                        <div className="row">
+                            <div className="top_1 clearfix">
+                                <div className="col-sm-8">
+                                <div className="top_1l clearfix">
+                                    <ul className="mgt">
+                                    <li><Link to="/lien-he"><i className="fa fa-phone col_1"></i> 028 62924598</Link></li>
+                                        <li><Link to="/lien-he"><i className="fa fa-map-marker col_1"></i> 638 Cộng Hòa, Phường 13, Quận Tân Bình, Tp. HCM</Link></li>
+                                    </ul>
+                                </div>
+                                </div>
+                                <div className="col-sm-4">
+                                    <div className="top_1r clearfix top_1i">
+                                        <ul className="navbar-right mgt social-network social-circle">
+                                            <li><a href="#" className="icoRss" title="Theo dõi trên Youtube"><i className="fa fa-rss"></i></a></li>
+                                            <li><a href="#" className="icoFacebook" title="Theo dõi trên Facebook"><i className="fa fa-facebook"></i></a></li>
+                                            <li><a href="#" className="icoTwitter" title="Theo dõi trên Twitter"><i className="fa fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    </div>
-                    </div>
-                    </section>
+                </section>
                 <section id="header" className="clearfix">
                     <nav className="navbar nav_t" ref={this.navbar_sticky_ref}>
                         <div className="container">
@@ -97,7 +97,7 @@ class Header extends Component {
                             </ul>
                                 <ul className="nav navbar-nav navbar-right">
                                     <li className="dropdown" style={{"paddingTop": "7px", "width": "150px"}}> <input onChange={this.setSearchName} type="text" className="form-control" placeholder="Tìm Kiếm..." /></li>
-                                    <li className="dropdown"><Link to={"/san-pham/" + this.state.search_name } className="tag_m1" data-toggle="dropdown"><span className="fa fa-search"></span></Link>
+                                    <li className="dropdown"><Link to={"/san-pham/tim-kiem/" + this.state.search_name } className="tag_m1" data-toggle="dropdown"><span className="fa fa-search"></span></Link>
                                     </li>
                                 </ul>
                             </div>

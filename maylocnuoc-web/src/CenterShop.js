@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 
 class CenterShop extends Component {
@@ -11,7 +12,7 @@ class CenterShop extends Component {
                 <div className="center_shop_1 text-center clearfix">
                     <div className="col-sm-12">
                     <h1 className="mgt">Sản Phẩm</h1>
-                    <h5><a href="shop_detail.html">Trang Chủ</a> / <span className="col_1">Sản Phẩm</span></h5>
+                    <h5><Link to="/">Trang Chủ</Link> / <span className="col_1">Sản Phẩm</span></h5>
                     </div>
                 </div>
             </div>

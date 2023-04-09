@@ -32,7 +32,7 @@ class Contact extends Component {
       };
 
     componentDidMount() {
-        
+        window.scrollTo(0, 0);
     }
 
     clearForm() {
@@ -61,7 +61,6 @@ class Contact extends Component {
         .then(res => res.json())
         .then(
             (result) => {
-                console.log("ok");
                 this.clearForm();
                 this.setState({show: true});
             }

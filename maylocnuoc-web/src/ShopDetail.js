@@ -42,7 +42,7 @@ class ShopDetail extends Component {
                             <div className="center_shop_1 text-center clearfix">
                                 <div className="col-sm-12">
                                 <h1 className="mgt">Chi Tiết Sản Phẩm</h1>
-                                <h5><a href="#">Trang Chủ</a> / <span className="col_1">Chi Tiết Sản Phẩm</span></h5>
+                                <h5><Link to="/">Trang Chủ</Link> / <span className="col_1">Chi Tiết Sản Phẩm</span></h5>
                                 </div>
                             </div>
                         </div>

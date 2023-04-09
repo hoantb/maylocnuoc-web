@@ -23,15 +23,26 @@ class Shop extends Component {
             special_products: [],
             totalProducts: 0,
             sort_type: "default",
-            searchName: props.params.ten
+            searchName: props.params.ten,
+            categoryInput: props.params.category
         }
-        console.log(props);
         this.clickPage = this.clickPage.bind(this);
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
         this.sortChange = this.sortChange.bind(this);
         this.filter = this.filter.bind(this);
         this.convertCheckBoxToId = this.convertCheckBoxToId.bind(this);
+        this.setCheckBoxValue = this.setCheckBoxValue.bind(this);
+        this.clearFilter = this.clearFilter.bind(this);
+    }
+
+    clearFilter () {
+        let categoriesCheckbox = this.state.categoriesCheckbox;
+        for (let i = 0; i < categoriesCheckbox.length; i++) {
+            categoriesCheckbox[i] = false;
+        }
+        this.setState({categoriesCheckbox: categoriesCheckbox})
+        this.getPage(1, this.state.sort_type, categoriesCheckbox);
     }
 
     getPage(page, sort_type, categoriesCheckbox) {
@@ -76,6 +87,7 @@ class Shop extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.getPage(1, this.state.sort_type, this.state.categoriesCheckbox);
         fetch( ConstantsVar.API_URL + "/api/danh-muc" + "/")
         .then(res => res.json())
@@ -85,7 +97,9 @@ class Shop extends Component {
                 for (let i = 0; i < result.length; i++) {
                     categoriesCheckbox.push(false);
                 }
+                
                 this.setState({categories: result, categoriesCheckbox: categoriesCheckbox})
+                
             }
         )
         fetch( ConstantsVar.API_URL + "/api/san-pham-noi-bat/")
@@ -146,6 +160,19 @@ class Shop extends Component {
         return ids;
     }
 
+    setCheckBoxValue(id) {
+        let categoriesCheckbox = this.state.categoriesCheckbox;
+        for (let i = 0; i < this.state.categories.length; i++)
+        {
+            if (this.state.categories[i].id == id) {
+                categoriesCheckbox[i] = true;
+                this.setState({categoriesCheckbox: categoriesCheckbox, categoryInput: null});
+                this.getPage(1, this.state.sort_type, categoriesCheckbox);
+                return
+            }
+        }
+    }
+
     filter(evt) {
         console.log(evt.target.id)
         let texts = (evt.target.id).split("-")
@@ -153,7 +180,7 @@ class Shop extends Component {
         let categoriesCheckbox = this.state.categoriesCheckbox;
         categoriesCheckbox[id] = !categoriesCheckbox[id]
         this.setState({categoriesCheckbox: categoriesCheckbox});
-        this.getPage(this.state.current_page, this.state.sort_type, categoriesCheckbox);
+        this.getPage(1, this.state.sort_type, categoriesCheckbox);
     }
 
     render() {
@@ -161,6 +188,13 @@ class Shop extends Component {
             <div>
                 {   this.state.searchName != this.props.params.ten &&
                     this.getPage(1, this.state.sort_type, this.state.categoriesCheckbox)
+                }
+                {   
+                    this.state.current_page &&
+                    this.state.categoriesCheckbox &&
+                    this.state.categoryInput &&
+                    this.state.categoryInput != "san-pham-noi-bat" &&
+                    this.setCheckBoxValue(this.state.categoryInput)
                 }
                 <Header/>
                 <CenterShop/>
@@ -171,11 +205,12 @@ class Shop extends Component {
                         <div className="col-sm-3">
                             <div className="shop_1l clearfix">
                                 <h4 className="mgt">Danh Mục</h4>
+                                <h5> <span><Link onClick={this.clearFilter} >Tất Cả Sản Phẩm</Link></span></h5>
                                 {
                                     this.state.categories &&
                                     this.state.categories.map(
                                         (category, index) => (
-                                            <h5 key={"category_" + index}><input checked={this.state.categoriesCheckbox[index]} value="123434" id={"category-cb-" + index} onClick={this.filter} type="checkbox"/> <span><Link id={"category-txt-" + index} onClick={this.filter} >{category.ten}</Link></span></h5>
+                                            <h5 key={"category_" + index}><input checked={this.state.categoriesCheckbox[index]} id={"category-cb-" + index} onChange={this.filter} type="checkbox"/> <span><Link id={"category-txt-" + index} onClick={this.filter} >{category.ten}</Link></span></h5>
                                         )
                                     )
                                 }
@@ -225,22 +260,20 @@ class Shop extends Component {
                                         {
                                             products_column.map(
                                                 product => (
-                                                        <div key={"product_" + product.id} className="col-sm-4 space_left">
-                                                            <div className="arriv_2m clearfix">
-                                                            <div className="arriv_2m1 clearfix">
-                                                                <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>
-                                                            </div>
-                                                            <div className="arriv_2m3 clearfix">
-                                                            <h4 className="bold mgt">{product.ten}</h4>
-                                                            {/* <p><Link to={"/chi-tiet-san-pham/" + product.id}>{product.mo_ta_ngan}</Link></p> */}
-                                                            <h3 className="normal">
-                                                            <span className="span_2">{product.gia}</span>
-                                                            <span className="span_3 col_1"> {product.gia}</span> 
-                                                            </h3>
-                                                            </div>
-                                                            </div>
+                                                    <div key={"product_" + product.id} className="col-sm-4 space_left">
+                                                        <div className="arriv_2m clearfix">
+                                                        <div className="arriv_2m1 clearfix">
+                                                            <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>
                                                         </div>
-                                                    
+                                                        <div className="arriv_2m3 clearfix">
+                                                        <h4 className="bold mgt">{product.ten}</h4>
+                                                        <h3 className="normal">
+                                                        <span className="span_2">{product.gia}</span>
+                                                        <span className="span_3 col_1"> {product.gia}</span> 
+                                                        </h3>
+                                                        </div>
+                                                        </div>
+                                                    </div>
                                                 )
                                             )
                                         }
@@ -253,11 +286,14 @@ class Shop extends Component {
                                 {
                                     this.state.current_page &&
                                     this.state.current_page > 1 &&
+                                    this.state.pages &&
                                     <li className=""><Link onClick={this.previousPage}>«</Link></li>
                                 }
                                 {
+                                    this.state.totalProducts > 0 &&
                                     this.state.current_page &&
                                     this.state.current_page <= 1 &&
+                                    this.state.pages &&
                                     <li className="disabled"><Link >«</Link></li>
                                 }
                                 
@@ -284,6 +320,7 @@ class Shop extends Component {
                                     <li><Link onClick={this.nextPage}>»</Link></li>
                                 }
                                 {
+                                    this.state.totalProducts > 0 &&
                                     this.state.current_page &&
                                     this.state.current_page >= this.state.totalPages &&
                                     <li className="disabled"><Link>»</Link></li>

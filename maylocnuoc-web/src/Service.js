@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 
 class Service extends Component {
   componentDidMount() {
+    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -16,7 +18,7 @@ class Service extends Component {
                 <div className="center_shop_1 text-center clearfix">
                     <div className="col-sm-12">
                     <h1 className="mgt">Dịch Vụ</h1>
-                    <h5><a href="#">Trang Chủ</a> / <span className="col_1">Dịch Vụ</span></h5>
+                    <h5><Link to="/">Trang Chủ</Link> / <span className="col_1">Dịch Vụ</span></h5>
                     </div>
                 </div>
                 </div>
