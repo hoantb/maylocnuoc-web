@@ -221,11 +221,11 @@ class Shop extends Component {
                                     this.state.special_products &&
                                     this.state.special_products.map(
                                         special_product => (
-                                                <div key={"san_pham_noi_bat" + special_product.id} className="shop_1l2i clearfix">
-                                                    <img src={special_product.san_pham.hinh_anh} alt="abc"/>
-                                                    <h5 className="mgt"><Link to={"/chi-tiet-san-pham/" + special_product.san_pham.id}>{special_product.san_pham.ten}</Link></h5>
-                                                    <h6 className="col_1">{special_product.san_pham.gia}</h6>
-                                                </div>
+                                            <div key={"san_pham_noi_bat" + special_product.id} className="shop_1l2i clearfix">
+                                                <img src={special_product.san_pham.hinh_anh} alt="abc"/>
+                                                <h5 className="mgt"><Link to={"/chi-tiet-san-pham/" + special_product.san_pham.id}>{special_product.san_pham.ten}</Link></h5>
+                                                <h6 className="col_1">{special_product.san_pham.gia}</h6>
+                                            </div>
                                         )
                                     )
                                 }
@@ -268,7 +268,6 @@ class Shop extends Component {
                                                         <div className="arriv_2m3 clearfix">
                                                         <h4 className="bold mgt">{product.ten}</h4>
                                                         <h3 className="normal">
-                                                        <span className="span_2">{product.gia}</span>
                                                         <span className="span_3 col_1"> {product.gia}</span> 
                                                         </h3>
                                                         </div>

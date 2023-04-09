@@ -138,8 +138,7 @@ class ProductCategories extends Component {
                     </div>
                     </div>
                     </div>
-                    </section>
-                <Footer />
+                </section>
             </div>
         );
     }
