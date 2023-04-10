@@ -248,6 +248,7 @@ color:#000;
 .sell_1{
 border-bottom:1px solid #ddd;
 padding-bottom:10px;
+padding-top: 20px;
 margin-bottom:20px; 
 }
 /*********************sell_end****************/
@@ -426,7 +427,7 @@ margin-bottom:5px;
     .wrap-text{
       display: -webkit-box;
       width: auto;
-      height: 120px;
+      height: 105px;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;

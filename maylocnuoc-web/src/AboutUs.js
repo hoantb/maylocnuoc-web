@@ -52,7 +52,7 @@ class AboutUs extends Component {
                                         !this.state.shortAboutUS &&
                                         <div>
                                             <h5 className="col_1 mgt">Chúng Tôi Tin Rằng Chất Lượng Tốt Hơn Số Lượng</h5>
-                                            <h3>Chào Mừng Đến Với Lọc Nước Văn Lộc! Mục đích của chúng tôi là cung cấp sản phẩm sạch và an toàn cho bạn.....</h3>
+                                            <h3>Chào Mừng Đến Với Lọc Nước Vạn Lộc! Mục đích của chúng tôi là cung cấp sản phẩm sạch và an toàn cho bạn.....</h3>
                                             <p>VANLOC jsc,. là công ty chuyên doanh thiết bị xử lý nước công nghiệp và dân dụng, với nhiều năm kinh nghiệm hoạt động chuyên sâu trong ngành xử lý nước. Xác định nguồn nước sạch luôn quan trọng và cần thiết trong mọi hoạt động của cuộc sống và sản xuất. Sứ mệnh hoạt động của VANLOC là tạo ra giá trị tiêu dùng cho các khách hàng bằng sản phẩm chất lượng và dịch vụ sau bán hàng hài lòng.</p>
                                             <p>Slogan Của Công Ty Chúng Tôi</p><br/>
                                             <blockquote><p className="mgt">Công nghệ tạo sự khác biệt.</p></blockquote>

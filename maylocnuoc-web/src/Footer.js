@@ -154,7 +154,7 @@ class Footer extends Component {
                     <div className="row">
                     <div className="footer_2 text-center clearfix">
                         <div className="col-sm-12">
-                        <p className="mgt">© 2023 Lọc Nước Văn Lộc | Design by <Link className="col_1" to="/lien-he">admin@locnuocvanloc.com</Link></p>
+                        <p className="mgt">© 2023 Lọc Nước Vạn Lộc | Design by <Link className="col_1" to="/lien-he">admin@locnuocvanloc.com</Link></p>
                         </div>
                     </div>
                     </div>
