@@ -99,7 +99,9 @@ class Footer extends Component {
                     <div className="footer_1 clearfix">
                         <div className="col-sm-3">
                         <div className="footer_1i clearfix">
-                        <a className="navbar-brand" href="index.html"><i className="fa fa-heartbeat"></i> Med <span>Shop</span> </a>
+                        <Link className="navbar-brand" to="/">
+                            <img style={{maxWidth: "100%", height: "100%"}} src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/vl1.PNG" alt="abc"/>
+                        </Link>
                         <h5><span className="bold">Phone:</span> <Link to="/lien-he">028 62924598</Link></h5>
                         <h5><span className="bold">Email:</span> <Link to="/lien-he">admin@locnuocvanloc.com</Link></h5>
                         <h5><span className="bold">Address:</span> <Link to="/lien-he">638 Cộng Hòa, Phường 13, Quận Tân Bình, Tp. HCM</Link></h5>

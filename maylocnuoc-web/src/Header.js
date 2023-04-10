@@ -84,7 +84,10 @@ class Header extends Component {
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>
                                 </button>
-                                <Link className="navbar-brand" to="/"><i className="fa fa-heartbeat"></i> Med <span>Shop</span> </Link>
+                                <Link className="navbar-brand" to="/">
+                                    <img style={{maxWidth: "100%", height: "100%"}} src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/vl1.PNG" alt="abc"/>
+                                </Link>
+                                
                             </div>
                             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul className="nav navbar-nav">

@@ -85,7 +85,7 @@ class ProductCategories extends Component {
                                                         <Link to={"/chi-tiet-san-pham/" + special_product.san_pham.id}><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></Link>
                                                     </div>
                                                     <div className="arriv_2m3 clearfix">
-                                                        <h4 className="bold mgt">{special_product.san_pham.ten}</h4>
+                                                        <h4 className="bold mgt wrap-text">{special_product.san_pham.ten}</h4>
                                                         <h3 className="normal">
                                                             <span className="span_3 col_1">{special_product.san_pham.gia}</span> 
                                                         </h3>
@@ -119,7 +119,7 @@ class ProductCategories extends Component {
                                                                     <Link to={"/chi-tiet-san-pham/" + sanPham.id}><img src={sanPham.hinh_anh} alt="abc" className="iw"/></Link>
                                                                 </div>
                                                                 <div className="arriv_2m3 clearfix">
-                                                                    <h4 className="bold mgt">{sanPham.ten}</h4>
+                                                                    <h4 className="bold mgt wrap-text">{sanPham.ten}</h4>
                                                                     <h3 className="normal">
                                                                         <span className="span_3 col_1">{sanPham.gia}</span> 
                                                                     </h3>

@@ -209,20 +209,7 @@ top:0;
 width:100%;
 left:0;
 }
-.arriv_2m3 .span_1 {
-color:#d01f1f;
-display:block;
-margin-top:10px; 
-}
-.arriv_2m3 .span_2 {
-color:#ccc;
-margin-right:10px;
-text-decoration:line-through; 
-}
-.arriv_2m3{
-background: #2a96ff14;
-padding:25px 15px 30px 15px;
-}
+
 .arriv_2{
 margin-top:30px; 
 }
@@ -434,3 +421,14 @@ margin-bottom:5px;
 @media (min-width:1201px) and (max-width:1350px) {
 
 }
+
+    /* Custorm css */
+    .wrap-text{
+      display: -webkit-box;
+      width: auto;
+      height: 120px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }

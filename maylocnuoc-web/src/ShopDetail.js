@@ -78,7 +78,9 @@ class ShopDetail extends Component {
                             }
                             {
                                 this.state.product &&
-                                <h4 className="col_2"><span>{this.state.product.gia}</span> {this.state.product.gia}</h4>
+                                <h4 className="col_2">
+                                {this.state.product.gia}
+                                </h4>
                             }
                             <div className="pd_n1 clearfix">
                                     <h4><Link className="button" to="/lien-he">Đặt Mua Sản Phẩm</Link></h4>
@@ -110,9 +112,7 @@ class ShopDetail extends Component {
                                             this.state.product &&
                                             <div dangerouslySetInnerHTML={{ __html: this.state.product.mo_ta_dai }}>
                                             </div>
-                                            
                                         }
-                                        
                                         </div>
                                         </div>
                                 </div>
@@ -171,7 +171,7 @@ class ShopDetail extends Component {
                                                 <div className="arriv_2m3 clearfix">
                                                     <h4 className="bold mgt">{product.ten}</h4>
                                                     <h3 className="normal">
-                                                        <span className="span_3 col_1">{product.gia}</span> 
+                                                        <span className="span_3 text-center">{product.gia}</span> 
                                                     </h3>
                                                 </div>
                                             </div>

@@ -177,8 +177,8 @@ body{
   .navbar-brand{
    color:#000;
    font-size:36px;
-   padding-top:10px;
-   margin-right:40px;
+   margin-right:100px;
+   padding: 0px
    }
   .navbar-brand span{
   color:#2a96ff;
@@ -493,6 +493,7 @@ body{
   .arriv_2m3{
    background: #2a96ff14;
    padding:25px 15px 30px 15px;
+   text-align: center;
    }
   .arriv_2{
   margin-top:30px; 
