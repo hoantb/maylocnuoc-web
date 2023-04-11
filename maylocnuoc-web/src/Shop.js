@@ -13,11 +13,11 @@ class Shop extends Component {
         this.state = {
             products: [],
             products_row: [],
-            product_each_row: 3,
+            product_each_row: 4,
             categories: [],
             categoriesCheckbox: [],
             totalPages: 0,
-            product_each_page: 9,
+            product_each_page: 12,
             pages: [],
             current_page: null,
             special_products: [],
@@ -260,7 +260,7 @@ class Shop extends Component {
                                         {
                                             products_column.map(
                                                 product => (
-                                                    <div key={"product_" + product.id} className="col-sm-4 space_left">
+                                                    <div key={"product_" + product.id} className="col-sm-3 space_left">
                                                         <div className="arriv_2m clearfix">
                                                         <div className="arriv_2m1 clearfix">
                                                             <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>

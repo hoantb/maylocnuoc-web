@@ -132,19 +132,21 @@ class ProductCategories extends Component {
                                 this.state.specialCategories.map(
                                     specialCategory => (
                                         <React.Fragment>
-                                            <div className="sell_1 clearfix">
+                                            <div className="sell_1_custom clearfix">
                                                 <div className="col-sm-9 space_left">
                                                     <h2 className="mgt">{specialCategory.ten}</h2>
                                                 </div>
                                                 <div className="col-sm-3 space_left">
-                                                    <Link to={"/san-pham/filter/" + specialCategory.id} className="button pull-right">Xem Thêm</Link>
+                                                    <h6 style={{"marginTop": "0px"}}>
+                                                        <Link to={"/san-pham/filter/" + specialCategory.id} className="btn_custom pull-right">Xem Thêm</Link>
+                                                    </h6>
                                                 </div>
                                             </div>
                                             {
                                                 specialCategory.san_phams.map(
                                                     (sanPham, sIndex) => (
-                                                        sIndex < 3 &&
-                                                        <div className="col-sm-4 space_left">
+                                                        sIndex < 4 &&
+                                                        <div className="col-sm-3 space_left">
                                                             <div className="arriv_2m clearfix">
                                                                 <div className="arriv_2m1 clearfix">
                                                                     <Link to={"/chi-tiet-san-pham/" + sanPham.id}><img src={sanPham.hinh_anh} alt="abc" className="iw"/></Link>
