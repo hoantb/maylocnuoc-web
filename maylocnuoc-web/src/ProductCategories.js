@@ -90,9 +90,9 @@ class ProductCategories extends Component {
                                                         <Link to={"/chi-tiet-san-pham/" + special_product.id}><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></Link>
                                                     </div>
                                                     <div className="arriv_2m3 clearfix">
-                                                        <h4 className="bold mgt wrap-text">{special_product.san_pham.ten}</h4>
+                                                        <h6 className="bold mgt wrap-text">{special_product.san_pham.ten}</h6>
                                                         <h3 className="normal">
-                                                            <span className="span_3 col_1">{special_product.san_pham.gia}</span> 
+                                                            <span className="span_3 col_1">{special_product.san_pham.gia.toLocaleString()}</span> 
                                                         </h3>
                                                     </div>
                                                     </div>
@@ -114,9 +114,9 @@ class ProductCategories extends Component {
                                                         <Link href="#"><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></Link>
                                                     </div>
                                                     <div className="arriv_2m3 clearfix">
-                                                        <h4 className="bold mgt wrap-text">{special_product.san_pham.ten}</h4>
+                                                        <h6 className="bold mgt wrap-text">{special_product.san_pham.ten}</h6>
                                                         <h3 className="normal">
-                                                            <span className="span_3 col_1">{special_product.san_pham.gia}</span> 
+                                                            <span className="span_3 col_1">{special_product.san_pham.gia.toLocaleString()}</span> 
                                                         </h3>
                                                     </div>
                                                     </div>
@@ -152,9 +152,9 @@ class ProductCategories extends Component {
                                                                     <Link to={"/chi-tiet-san-pham/" + sanPham.id}><img src={sanPham.hinh_anh} alt="abc" className="iw"/></Link>
                                                                 </div>
                                                                 <div className="arriv_2m3 clearfix">
-                                                                    <h4 className="bold mgt wrap-text">{sanPham.ten}</h4>
+                                                                    <h6 className="bold mgt wrap-text">{sanPham.ten}</h6>
                                                                     <h3 className="normal">
-                                                                        <span className="span_3 col_1">{sanPham.gia}</span> 
+                                                                        <span className="span_3 col_1">{sanPham.gia.toLocaleString()}</span> 
                                                                     </h3>
                                                                 </div>
                                                             </div>

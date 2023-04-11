@@ -427,7 +427,7 @@ margin-bottom:5px;
     .wrap-text{
       display: -webkit-box;
       width: auto;
-      height: 105px;
+      height: 80px;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;

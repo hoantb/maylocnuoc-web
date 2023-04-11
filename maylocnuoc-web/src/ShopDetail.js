@@ -13,16 +13,34 @@ class ShopDetail extends Component {
             product: null,
             relevant_products: null
         }
+        this.fetchProduct = this.fetchProduct.bind(this);
+        this.handleClickRelevantProduct = this.handleClickRelevantProduct.bind(this);
+        this.openContact = this.openContact.bind(this);
     }
 
+    openContact () {
+        window.open("https://zalo.me/0904454090", '_blank').focus();
+        console.log("asdasdasd")
+    }
+
+    handleClickRelevantProduct (evt) {
+        let texts = (evt.target.id).split("-")
+        let id = Number(texts[texts.length - 1])
+        console.log(id)
+        this.fetchProduct(id)
+    }
 
     componentDidMount() {
-        fetch( ConstantsVar.API_URL + "/api/san-pham/" + this.props.params.id)
+        this.fetchProduct(this.props.params.id)
+    }
+    fetchProduct (productId) {
+        window.scrollTo(0, 0);
+        fetch( ConstantsVar.API_URL + "/api/san-pham/" + productId)
         .then(res => res.json())
         .then(
             (result) => {
                 this.setState({product: result});
-                fetch( ConstantsVar.API_URL + "/api/san-pham/" +  this.props.params.id + "/san-pham-lien-quan")
+                fetch( ConstantsVar.API_URL + "/api/san-pham/" +  productId + "/san-pham-lien-quan")
                 .then(res => res.json())
                 .then(
                     (result) => {
@@ -79,11 +97,13 @@ class ShopDetail extends Component {
                             {
                                 this.state.product &&
                                 <h4 className="col_2">
-                                {this.state.product.gia}
+                                {this.state.product.gia.toLocaleString()}
                                 </h4>
                             }
                             <div className="pd_n1 clearfix">
-                                    <h4><Link target="_blank" className="button" to="https://zalo.me/0904454090">Đặt Mua Sản Phẩm</Link></h4>
+                                    <h4>
+                                        <input onClick={this.openContact} className="button" value="Đặt Mua Sản Phẩm" type="submit"/>
+                                    </h4>
                             </div>
                             <ul className="social-network social-circle">
                                 <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>
@@ -127,7 +147,7 @@ class ShopDetail extends Component {
                                                     <td>Giá</td>
                                                     {
                                                         this.state.product &&
-                                                        <td>{this.state.product.gia}</td>
+                                                        <td>{this.state.product.gia.toLocaleString()}</td>
                                                     }
                                                     
                                                 </tr>
@@ -167,15 +187,15 @@ class ShopDetail extends Component {
                                 this.state.relevant_products &&
                                 this.state.relevant_products.map(
                                     product => (
-                                        <div className="col-sm-3 space_left">
+                                        <div key={"relevant-product-" + product.id} className="col-sm-3 space_left">
                                             <div className="arriv_2m clearfix">
                                                 <div className="arriv_2m1 clearfix">
-                                                    <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>
+                                                    <Link ><img id={"img-relevant-product-" + product.id} onClick={this.handleClickRelevantProduct} src={product.hinh_anh} alt="abc" className="iw"/></Link>
                                                 </div>
                                                 <div className="arriv_2m3 clearfix">
-                                                    <h4 className="bold mgt wrap-text">{product.ten}</h4>
+                                                    <h6 className="bold mgt wrap-text">{product.ten}</h6>
                                                     <h3 className="normal">
-                                                        <span className="span_3 col_1">{product.gia}</span> 
+                                                        <span className="span_3 col_1">{product.gia.toLocaleString()}</span> 
                                                     </h3>
                                                 </div>
                                             </div>

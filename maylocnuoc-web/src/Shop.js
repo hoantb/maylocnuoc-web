@@ -266,9 +266,9 @@ class Shop extends Component {
                                                             <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>
                                                         </div>
                                                         <div className="arriv_2m3 clearfix">
-                                                        <h4 className="bold mgt wrap-text">{product.ten}</h4>
+                                                        <h6 className="bold mgt wrap-text">{product.ten}</h6>
                                                         <h3 className="normal">
-                                                        <span className="span_3 col_1"> {product.gia}</span> 
+                                                        <span className="span_3 col_1"> {product.gia.toLocaleString()}</span> 
                                                         </h3>
                                                         </div>
                                                         </div>
