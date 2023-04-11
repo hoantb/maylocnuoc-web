@@ -27,16 +27,7 @@ class Home extends Component {
     return (
         <div>
               <Header />
-              <section id="center" className="center_shop"> 
-                  <div className="row">
-                      <div className="center_shop_1 text-center clearfix">
-                          <div className="col-sm-12">
-                          <h1 className="mgt">Trang Chủ</h1>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-              {/* <SpecialProduct/> */}
+              <Center />
               <ProductCategories/>
               <Footer />
         </div>

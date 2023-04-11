@@ -8,10 +8,10 @@ Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152
 /*********************center_home****************/
 .fade-carousel {
   position: relative;
-  min-height: 600px;
+  min-height: 400px;
 }
 .fade-carousel .carousel-inner .item {
-  min-height: 530px;
+  min-height: 400px;
 }
 .fade-carousel .carousel-indicators > li {
   margin: 0 4px;
@@ -41,7 +41,6 @@ margin-right:5px;
 width:100%;
   top: 50%;
   left:50%;
-padding:20px 15px;
   z-index: 2;
   text-transform:capitalize;
   text-shadow: 1px 1px 0 rgba(0,0,0,.75);
@@ -91,7 +90,7 @@ transform: translate3d(-50%,-50%,0);
 .fade-carousel .slides .slide-1, 
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
-min-height: 600px;
+min-height: 400px;
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;

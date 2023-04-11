@@ -673,7 +673,7 @@ body{
       position: fixed;
       top: 0;
       width: 100%;
-      z-index:10;
+      z-index:16;
       padding-top:10px;
       padding-bottom:10px;
       background-color: #191a1d;
