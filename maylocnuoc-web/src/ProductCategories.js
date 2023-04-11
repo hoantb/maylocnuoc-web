@@ -87,7 +87,7 @@ class ProductCategories extends Component {
                                                 <div className="col-sm-3 space_left">
                                                     <div className="arriv_2m clearfix">
                                                     <div className="arriv_2m1 clearfix">
-                                                        <Link href="#"><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></Link>
+                                                        <Link to={"/chi-tiet-san-pham/" + special_product.id}><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></Link>
                                                     </div>
                                                     <div className="arriv_2m3 clearfix">
                                                         <h4 className="bold mgt wrap-text">{special_product.san_pham.ten}</h4>

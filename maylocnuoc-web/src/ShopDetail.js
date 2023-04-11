@@ -83,7 +83,7 @@ class ShopDetail extends Component {
                                 </h4>
                             }
                             <div className="pd_n1 clearfix">
-                                    <h4><Link className="button" to="/lien-he">Đặt Mua Sản Phẩm</Link></h4>
+                                    <h4><Link target="_blank" className="button" to="https://zalo.me/0904454090">Đặt Mua Sản Phẩm</Link></h4>
                             </div>
                             <ul className="social-network social-circle">
                                 <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>
@@ -124,15 +124,19 @@ class ShopDetail extends Component {
                                                 <table>
                                                 <tbody>
                                                 <tr>
-                                                    <td>Pricing</td>
-                                                    <td>$42.00</td>
+                                                    <td>Giá</td>
+                                                    {
+                                                        this.state.product &&
+                                                        <td>{this.state.product.gia}</td>
+                                                    }
+                                                    
                                                 </tr>
                                                 <tr>
-                                                    <td>Stock Availability</td>
-                                                    <td>AVAILABLE</td>
+                                                    <td>Tình Trạng</td>
+                                                    <td>Còn Hàng</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Rating</td>
+                                                    <td>Đánh Giá</td>
                                                     <td>
                                                     <span>
                                                     <i className="fa fa-star"></i>
@@ -169,9 +173,9 @@ class ShopDetail extends Component {
                                                     <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>
                                                 </div>
                                                 <div className="arriv_2m3 clearfix">
-                                                    <h4 className="bold mgt">{product.ten}</h4>
+                                                    <h4 className="bold mgt wrap-text">{product.ten}</h4>
                                                     <h3 className="normal">
-                                                        <span className="span_3 text-center">{product.gia}</span> 
+                                                        <span className="span_3 col_1">{product.gia}</span> 
                                                     </h3>
                                                 </div>
                                             </div>

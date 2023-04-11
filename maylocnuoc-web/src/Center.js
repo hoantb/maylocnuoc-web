@@ -18,20 +18,20 @@ class Center extends Component {
                     <div className="item slides active">
                     <div className="slide-1"></div>
                         <div className="hero clearfix">
-                            <img style={{"height": "100%", "width": "100%"}} src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/1.jpg"  alt="abc"/>
+                            <img className="iw" src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/1.jpg"  alt="abc"/>
                         </div>
                     </div>
                     <div className="item slides">
                     <div className="slide-2"></div>
                     <div className="hero clearfix">
-                        <img style={{"height": "100%", "width": "100%"}} src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/2.jpg"  alt="abc"/>
+                        <img className="iw" src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/2.jpg"  alt="abc"/>
                     </div>
                     </div>
                     <div className="item slides">
                         <div className="slide-3"></div>
                         <div className="hero clearfix">
                             <div className="hero clearfix">
-                                <img style={{"height": "100%", "width": "100%"}} src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/3.jpg"  alt="abc"/>
+                                <img className="iw" src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/3.jpg"  alt="abc"/>
                             </div>
                         </div>
                     </div>
