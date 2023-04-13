@@ -95,7 +95,7 @@ class Header extends Component {
                                     <li><Link className="tag_m" to="/gioi-thieu">Giới Thiệu</Link></li>
                                     <li><Link to="/san-pham" className="tag_m" >Sản Phẩm</Link></li>
                                     <li><Link className="tag_m" to="/dich-vu">Dịch Vụ</Link></li>
-                                    {/* <li><Link className="tag_m" to="/tin-tuc">Tin Tức</Link></li> */}
+                                 <li><Link className="tag_m" to="/tin-tuc">Tin Tức</Link></li>
                                     <li><Link className="tag_m" to="/lien-he">Liên Hệ</Link></li>
                                 </ul>
                                 <ul className="nav navbar-nav navbar-right">

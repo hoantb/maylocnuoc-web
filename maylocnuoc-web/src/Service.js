@@ -59,7 +59,7 @@ class Service extends Component {
                         </div>
                     </div>
                     </div>
-                  </section>
+                </section>
               <Footer />
           </div>
       );
