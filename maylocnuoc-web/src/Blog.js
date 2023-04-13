@@ -62,7 +62,7 @@ class Blog extends Component {
                                                             <div style={{"paddingTop": "10px", "fontSize": "1.5em"}}>
                                                                 {blog.mo_ta_ngan}
                                                             </div>
-                                                            <div >
+                                                            <div style={{"paddingTop": "30px"}}>
                                                                 <Link className="btn_custom">Chi Tiết</Link>
                                                             </div> 
                                                         </div>
