@@ -67,7 +67,6 @@ body{
   }
   h6{
   font-size:16px;
-  margin-top:15px;
   }
   .space_left{
   padding-left:0; 
@@ -492,7 +491,7 @@ body{
    }
   .arriv_2m3{
    background: #2a96ff14;
-   padding:25px 15px 30px 15px;
+   padding:10px 15px 10px 15px;
    text-align: center;
    }
   .arriv_2{

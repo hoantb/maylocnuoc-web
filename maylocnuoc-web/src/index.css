@@ -427,11 +427,12 @@ margin-bottom:5px;
     .wrap-text{
       display: -webkit-box;
       width: auto;
-      height: 80px;
-      -webkit-line-clamp: 4;
+      height: 60px;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-size: 14px;
   }
 
   .sell_1_custom{

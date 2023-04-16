@@ -91,9 +91,9 @@ class ProductCategories extends Component {
                                                     </div>
                                                     <div className="arriv_2m3 clearfix">
                                                         <h6 className="bold mgt wrap-text">{special_product.san_pham.ten}</h6>
-                                                        <h3 className="normal">
+                                                        <h6 className="normal">
                                                             <span className="span_3 col_1">{special_product.san_pham.gia.toLocaleString()}</span> 
-                                                        </h3>
+                                                        </h6>
                                                     </div>
                                                     </div>
                                                 </div>
@@ -115,9 +115,9 @@ class ProductCategories extends Component {
                                                     </div>
                                                     <div className="arriv_2m3 clearfix">
                                                         <h6 className="bold mgt wrap-text">{special_product.san_pham.ten}</h6>
-                                                        <h3 className="normal">
+                                                        <h6 className="normal">
                                                             <span className="span_3 col_1">{special_product.san_pham.gia.toLocaleString()}</span> 
-                                                        </h3>
+                                                        </h6>
                                                     </div>
                                                     </div>
                                                 </div>
@@ -153,9 +153,9 @@ class ProductCategories extends Component {
                                                                 </div>
                                                                 <div className="arriv_2m3 clearfix">
                                                                     <h6 className="bold mgt wrap-text">{sanPham.ten}</h6>
-                                                                    <h3 className="normal">
+                                                                    <h6 className="normal">
                                                                         <span className="span_3 col_1">{sanPham.gia.toLocaleString()}</span> 
-                                                                    </h3>
+                                                                    </h6>
                                                                 </div>
                                                             </div>
                                                         </div>
