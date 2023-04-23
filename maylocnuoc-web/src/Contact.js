@@ -101,7 +101,7 @@ class Contact extends Component {
                         <span><i className="fa fa-phone col_1"></i></span>
                         <h4>Điện Thoại</h4>
                         <p><Link>Hotline: 0976 464 994</Link></p>
-                        <p><Link >Tư Vấn: 0937 087 900</Link></p>
+                        <p><Link >Tư Vấn: 0976 464 994</Link></p>
                         </div>
                         </div>
                         <div className="col-sm-3">
