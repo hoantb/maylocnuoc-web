@@ -102,9 +102,9 @@ class Footer extends Component {
                         <Link className="navbar-brand" to="/">
                             <img style={{maxWidth: "100%", height: "100%"}} src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/vl1.PNG" alt="abc"/>
                         </Link>
-                        <h5><span className="bold">Phone:</span> <Link to="/lien-he">028 62924598</Link></h5>
-                        <h5><span className="bold">Email:</span> <Link to="/lien-he">admin@locnuocvanloc.com</Link></h5>
-                        <h5><span className="bold">Address:</span> <Link to="/lien-he">638 Cộng Hòa, Phường 13, Quận Tân Bình, Tp. HCM</Link></h5>
+                        <h5><span className="bold">Điện Thoại:</span> <Link to="/lien-he">0976 464 994</Link></h5>
+                        <h5><span className="bold">Email:</span> <Link to="/lien-he">locnuocvanloc@gmail.com</Link></h5>
+                        <h5><span className="bold">Địa Chỉ:</span> <Link to="/lien-he">84 Phan Đình Phùng, P2, TP Bảo Lộc, Lâm Đồng</Link></h5>
                         <ul className="social-network social-circle">
                             <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss"></i></a></li>
                             <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook" ></i></a></li>
@@ -154,7 +154,7 @@ class Footer extends Component {
                     <div className="row">
                     <div className="footer_2 text-center clearfix">
                         <div className="col-sm-12">
-                        <p className="mgt">© 2023 Lọc Nước Vạn Lộc | Design by <Link className="col_1" to="/lien-he">admin@locnuocvanloc.com</Link></p>
+                        <p className="mgt">© 2023 Lọc Nước Vạn Lộc | Design by <Link className="col_1" to="/lien-he">locnuocvanloc@gmail.com</Link></p>
                         </div>
                     </div>
                     </div>

@@ -77,7 +77,7 @@ class Contact extends Component {
                     <div className="center_shop_1 text-center clearfix">
                         <div className="col-sm-12">
                         <h1 className="mgt">Liên Hệ</h1>
-                        <h5><a href="#">Trang Chủ</a> / <span className="col_1">Liên Hệ</span></h5>
+                        <h5><a >Trang Chủ</a> / <span className="col_1">Liên Hệ</span></h5>
                         </div>
                     </div>
                     </div>
@@ -91,25 +91,25 @@ class Contact extends Component {
                         <div className="col-sm-3">
                         <div className="contact_1i text-center clearfix">
                         <span><i className="fa fa-map-marker col_1"></i></span>
-                        <h4>Address</h4>
-                        <p><Link href="#">638 Cộng Hòa, P. 13,</Link></p>
-                        <p><Link href="#">Q. Tân Bình, Tp. HCM</Link></p>
+                        <h4>Địa Chỉ</h4>
+                        <p><Link >84 Phan Đình Phùng,</Link></p>
+                        <p><Link >TP Bảo Lộc, Lâm Đồng</Link></p>
                         </div>
                         </div>
                         <div className="col-sm-3">
                         <div className="contact_1i text-center clearfix">
                         <span><i className="fa fa-phone col_1"></i></span>
                         <h4>Điện Thoại</h4>
-                        <p><Link href="#">Hotline: 090 44 54 090</Link></p>
-                        <p><Link href="#">Tư Vấn:  028 62924598</Link></p>
+                        <p><Link>Hotline: 0976 464 994</Link></p>
+                        <p><Link >Tư Vấn: 0937 087 900</Link></p>
                         </div>
                         </div>
                         <div className="col-sm-3">
                         <div className="contact_1i text-center clearfix">
                         <span><i className="fa fa-envelope col_1"></i></span>
                         <h4>Email</h4>
-                        <p><Link href="#">admin@locnuocvanloc.com</Link></p>
-                        <p><Link href="#">vanloc@gmail.com</Link></p>
+                        <p><Link>locnuocvanloc@gmail.com</Link></p>
+                        <p style={{"display": "None"}}><Link>locnuocvanloc@gmail.com</Link></p>
                         </div>
                         </div>
                         <div className="col-sm-3">
@@ -162,7 +162,7 @@ class Contact extends Component {
                     </div>
                     <div className="contact_3 clearfix">
                     <div className="col-sm-12 clearfix">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.075549209809!2d106.63470605034894!3d10.80552569226403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175295a4f6bb5d3%3A0xa159854d96f8ac30!2zNjM4IMSQLiBD4buZbmcgSMOyYSwgUGjGsOG7nW5nIDE1LCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1679650432121!5m2!1sen!2s" width="100%" height="500px" style={{"border": "0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d977.2293410919932!2d107.8027106111453!3d11.557781610553905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3173f719c9852f1d%3A0xf0ef75ead54264be!2zR2nhuqNpIFBow6FwIEzhu41jIE7GsOG7m2MgVuG6oW4gTOG7mWM!5e0!3m2!1sen!2s!4v1682260728797!5m2!1sen!2s" width="100%" height="500px" style={{"border": "0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                     </div>

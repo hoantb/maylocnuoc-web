@@ -56,8 +56,8 @@ class Header extends Component {
                                 <div className="col-sm-8">
                                 <div className="top_1l clearfix">
                                     <ul className="mgt">
-                                    <li><Link to="/lien-he"><i className="fa fa-phone col_1"></i> 028 62924598</Link></li>
-                                        <li><Link to="/lien-he"><i className="fa fa-map-marker col_1"></i> 638 Cộng Hòa, Phường 13, Quận Tân Bình, Tp. HCM</Link></li>
+                                    <li><Link to="/lien-he"><i className="fa fa-phone col_1"></i> 0976 464 994</Link></li>
+                                        <li><Link to="/lien-he"><i className="fa fa-map-marker col_1"></i> locnuocvanloc@gmail.com</Link></li>
                                     </ul>
                                 </div>
                                 </div>
