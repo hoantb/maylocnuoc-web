@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import CenterShop from "./CenterShop";
 import './Shop.css'
 import * as ConstantsVar from "./common/constants";
 import { Link } from "react-router-dom";
