@@ -21,7 +21,8 @@ class Contact extends Component {
         this.clearForm = this.clearForm.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.state = {
-            show: false
+            show: false,
+            contactImage: null
         }
     }
 
@@ -33,6 +34,8 @@ class Contact extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
+        let layout = JSON.parse(localStorage.getItem("layout"))
+        this.setState({contactImage: layout.lien_he})
     }
 
     clearForm() {
@@ -156,7 +159,10 @@ class Contact extends Component {
                         </div>
                         <div className="col-sm-4 space_left">
                         <div className="contact_2l clearfix">
-                        <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/48.jpg" className="iw" alt="abc"/>
+                            {
+                                this.state.contactImage &&
+                                <img src={this.state.contactImage.hinh_anh} className="iw" alt="abc"/>
+                            }
                         </div>
                         </div>
                     </div>

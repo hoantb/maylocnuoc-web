@@ -125,7 +125,6 @@ class Shop extends Component {
         this.setState({current_page: Number(this.state.current_page + 1)})
     }
     sortChange(event) {
-        console.log(event.target.value);
         let value = event.target.value;
         if (value === "Giá: thấp đến cao") 
         {
@@ -174,7 +173,6 @@ class Shop extends Component {
     }
 
     filter(evt) {
-        console.log(evt.target.id)
         let texts = (evt.target.id).split("-")
         let id = Number(texts[texts.length - 1])
         let categoriesCheckbox = this.state.categoriesCheckbox;

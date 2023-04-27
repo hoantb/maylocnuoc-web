@@ -10,11 +10,14 @@ class AboutUs extends Component {
         super(props);
         this.state = {
             shortAboutUS: null,
-            longAboutUS: null
+            longAboutUS: null,
+            aboutUsImage: null
         }
     }
     componentDidMount() {
         window.scrollTo(0, 0);
+        let layout = JSON.parse(localStorage.getItem("layout"))
+        this.setState({aboutUsImage: layout.gioi_thieu})
         fetch( ConstantsVar.API_URL + "/api/gioi-thieu")
         .then(res => res.json())
         .then(
@@ -67,7 +70,10 @@ class AboutUs extends Component {
                             </div>
                             <div className="col-sm-6">
                             <div className="about_1r clearfix">
-                            <img src="https://storage.googleapis.com/reader-web-statics/maylocnuoc/frontend/img/49.jpg" className="iw" alt="abc"/>
+                                {
+                                    this.state.aboutUsImage &&
+                                    <img src={this.state.aboutUsImage.hinh_anh} className="iw" alt="abc"/>
+                                }
                             </div>
                             </div>
                         </div>

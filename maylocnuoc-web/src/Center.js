@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import * as ConstantsVar from "./common/constants";
 
 class Center extends Component {
 
@@ -11,13 +10,8 @@ class Center extends Component {
     }
 
     componentDidMount() {
-        fetch( ConstantsVar.API_URL + "/api/giao-dien/")
-        .then(res => res.json())
-        .then(
-            (result) => {
-                this.setState({slides: result.data.slides})
-            }
-        )
+        let layout = JSON.parse(localStorage.getItem("layout"));
+        this.setState({slides: layout.slides});
     }
 
     render() {
@@ -32,9 +26,9 @@ class Center extends Component {
                             this.state.slides.map(
                                 (slide, index) => (
                                     index == 0 ?
-                                    <li data-target="#bs-carousel" data-slide-to={index.toString()} className="active"></li>
+                                    <li key={"indicator-home-" + index.toString()} data-target="#bs-carousel" data-slide-to={index.toString()} className="active"></li>
                                     :
-                                    <li data-target="#bs-carousel" data-slide-to={index.toString()} className=""></li>
+                                    <li key={"indicator-home-" + index.toString()} data-target="#bs-carousel" data-slide-to={index.toString()} className=""></li>
                                 )
                             )
                         }
@@ -45,14 +39,14 @@ class Center extends Component {
                             this.state.slides.map(
                                 (slide, index) => (
                                     index == 0 ?
-                                    <div className="item slides active">
+                                    <div key={"image-home-" + index.toString()} className="item slides active">
                                         <div className="slide-1"></div>
                                         <div className="hero clearfix">
                                             <img className="iw" src={slide.hinh_anh}  alt="abc"/>
                                         </div>
                                     </div>
                                     :
-                                    <div className="item slides">
+                                    <div key={"image-home-" + index.toString()} className="item slides">
                                         <div className="slide-1"></div>
                                         <div className="hero clearfix">
                                             <img className="iw" src={slide.hinh_anh}  alt="abc"/>

@@ -26,7 +26,6 @@ class ProductCategories extends Component {
         .then(res => res.json())
         .then(
             (result) => {
-                console.log(result)
                 this.setState({specialCategories: result.data})
             }
         )
@@ -34,7 +33,6 @@ class ProductCategories extends Component {
         .then(res => res.json())
         .then(
             (result) => {
-                console.log(result)
                 this.setState({special_products: result})
             }
         )
@@ -81,7 +79,7 @@ class ProductCategories extends Component {
                                         this.state.special_products.map(
                                             (special_product, index) => (
                                                 index < 4 &&
-                                                <div className="col-sm-3 space_left">
+                                                <div key={"special-categoriy-" +index.toString()} className="col-sm-3 space_left">
                                                     <div className="arriv_2m clearfix">
                                                     <div className="arriv_2m1 clearfix">
                                                         <Link to={"/chi-tiet-san-pham/" + special_product.id}><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></Link>
@@ -105,7 +103,7 @@ class ProductCategories extends Component {
                                             (special_product, index) => (
                                                 index > 3 &&
                                                 index < 8 &&
-                                                <div className="col-sm-3 space_left">
+                                                <div key={"special-category-" + index.toString()} className="col-sm-3 space_left">
                                                     <div className="arriv_2m clearfix">
                                                     <div className="arriv_2m1 clearfix">
                                                         <Link href="#"><img src={special_product.san_pham.hinh_anh} alt="abc" className="iw"/></Link>
@@ -128,8 +126,8 @@ class ProductCategories extends Component {
                                 this.state.specialCategories &&
                                 this.state.specialCategories.map(
                                     specialCategory => (
-                                        <React.Fragment>
-                                            <div className="sell_1_custom clearfix">
+                                        <React.Fragment key={"san-pham-line-" + specialCategory.id}>
+                                            <div  className="sell_1_custom clearfix">
                                                 <div className="col-sm-9 space_left">
                                                     <h2 className="mgt">{specialCategory.ten}</h2>
                                                 </div>
@@ -143,7 +141,7 @@ class ProductCategories extends Component {
                                                 specialCategory.san_phams.map(
                                                     (sanPham, sIndex) => (
                                                         sIndex < 4 &&
-                                                        <div className="col-sm-3 space_left">
+                                                        <div key={"special-category-" + sIndex.toString()} className="col-sm-3 space_left">
                                                             <div className="arriv_2m clearfix">
                                                                 <div className="arriv_2m1 clearfix">
                                                                     <Link to={"/chi-tiet-san-pham/" + sanPham.id}><img src={sanPham.hinh_anh} alt="abc" className="iw"/></Link>

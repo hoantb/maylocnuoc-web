@@ -19,14 +19,12 @@ class ShopDetail extends Component {
     }
 
     openContact () {
-        window.open("https://zalo.me/0904454090", '_blank').focus();
-        console.log("asdasdasd")
+        window.open("https://zalo.me/0976464994", '_blank').focus();
     }
 
     handleClickRelevantProduct (evt) {
         let texts = (evt.target.id).split("-")
         let id = Number(texts[texts.length - 1])
-        console.log(id)
         this.fetchProduct(id)
     }
 

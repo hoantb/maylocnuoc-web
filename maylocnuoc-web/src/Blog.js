@@ -48,7 +48,7 @@ class Blog extends Component {
                                       this.state.blogs &&
                                       this.state.blogs.map(
                                           blog => (
-                                                <div style={{"marginBottom": "60px"}}>
+                                                <div key={"blog-" + blog.id} style={{"marginBottom": "60px"}}>
                                                     <div className="categories_1 clearfix">
                                                         <div className="col-sm-12">
                                                             <h2 className="mgt">{blog.tieu_de}</h2>

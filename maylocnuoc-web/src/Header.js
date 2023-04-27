@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import * as ConstantsVar from "./common/constants";
 
 class Header extends Component {
 
@@ -21,7 +22,6 @@ class Header extends Component {
     }
 
     handleScroll () {
-        console.log("ok")
         if (this.navbar_sticky_ref != null) {
             if (window.pageYOffset >= this.state.sticky + this.state.navbar_height) 
             {
@@ -45,6 +45,13 @@ class Header extends Component {
         window.onscroll = this.handleScroll;
         this.setState({sticky: this.navbar_sticky_ref.current.offsetTop})
         this.setState({navbar_height: document.querySelector('.navbar').offsetHeight})
+        fetch( ConstantsVar.API_URL + "/api/giao-dien/")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                localStorage.setItem("layout", JSON.stringify(result.data))
+            }
+        )
     }
     render() {
         return (
