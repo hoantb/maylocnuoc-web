@@ -45,13 +45,13 @@ class Header extends Component {
         window.onscroll = this.handleScroll;
         this.setState({sticky: this.navbar_sticky_ref.current.offsetTop})
         this.setState({navbar_height: document.querySelector('.navbar').offsetHeight})
-        fetch( ConstantsVar.API_URL + "/api/giao-dien/")
-        .then(res => res.json())
-        .then(
-            (result) => {
-                localStorage.setItem("layout", JSON.stringify(result.data))
-            }
-        )
+        // fetch( ConstantsVar.API_URL + "/api/giao-dien/")
+        // .then(res => res.json())
+        // .then(
+        //     (result) => {
+        //         localStorage.setItem("layout", JSON.stringify(result.data))
+        //     }
+        // )
     }
     render() {
         return (

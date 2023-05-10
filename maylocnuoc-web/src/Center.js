@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as ConstantsVar from "./common/constants";
 
 class Center extends Component {
 
@@ -10,8 +11,13 @@ class Center extends Component {
     }
 
     componentDidMount() {
-        let layout = JSON.parse(localStorage.getItem("layout"));
-        this.setState({slides: layout.slides});
+        fetch( ConstantsVar.API_URL + "/api/giao-dien/")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({slides: result.data.slides});
+            }
+        )
     }
 
     render() {

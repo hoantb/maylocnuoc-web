@@ -16,8 +16,14 @@ class AboutUs extends Component {
     }
     componentDidMount() {
         window.scrollTo(0, 0);
-        let layout = JSON.parse(localStorage.getItem("layout"))
-        this.setState({aboutUsImage: layout.gioi_thieu})
+        fetch( ConstantsVar.API_URL + "/api/giao-dien/")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({aboutUsImage: result.data.gioi_thieu})
+            }
+        )
+        
         fetch( ConstantsVar.API_URL + "/api/gioi-thieu")
         .then(res => res.json())
         .then(

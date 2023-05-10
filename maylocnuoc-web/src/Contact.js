@@ -34,8 +34,14 @@ class Contact extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        let layout = JSON.parse(localStorage.getItem("layout"))
-        this.setState({contactImage: layout.lien_he})
+        fetch( ConstantsVar.API_URL + "/api/giao-dien/")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log(result)
+                this.setState({contactImage: result.data.lien_he})
+            }
+        )
     }
 
     clearForm() {
