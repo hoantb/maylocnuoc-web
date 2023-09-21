@@ -1,11 +1,9 @@
-/*
-Template Name:Med Shop
-File: Layout CSS
-Author: Templates On Web
-Author URI: http://templateonweb.com/
-Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
-*/
-/*********************shop****************/
+
+.product-img{
+    width:200px;
+    height: 200px;
+}
+
 .center_shop{
     background: #2a96ff14;
     padding-top:80px;

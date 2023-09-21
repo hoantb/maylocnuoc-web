@@ -261,7 +261,7 @@ class Shop extends Component {
                                                     <div key={"product_" + product.id} className="col-sm-3 space_left">
                                                         <div className="arriv_2m clearfix">
                                                         <div className="arriv_2m1 clearfix">
-                                                            <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="iw"/></Link>
+                                                            <Link to={"/chi-tiet-san-pham/" + product.id}><img src={product.hinh_anh} alt="abc" className="product-img"/></Link>
                                                         </div>
                                                         <div className="arriv_2m3 clearfix">
                                                             <h6 className="bold mgt wrap-text">{product.ten}</h6>
